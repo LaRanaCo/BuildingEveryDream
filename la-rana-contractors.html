@@ -1,0 +1,548 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>La Rana General Contractors | Texas</title>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Barlow+Condensed:wght@600;700;800&display=swap" rel="stylesheet" />
+<style>
+  *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+  :root{--purple:#4D1979;--purple-dark:#3a1259;--purple-deep:#280d40;--purple-mid:#6b2fa0;--purple-pale:#e8d9f5;--purple-mist:#f4eefb;--grey-light:#e8eaeb;--white:#ffffff;--text:#1a1025;--text-mid:#4a4060;--border:#d8cce8;--radius:8px;--radius-lg:14px}
+  html{scroll-behavior:smooth}
+  body{font-family:'Inter',sans-serif;color:var(--text);background:var(--white);font-size:16px;line-height:1.6}
+  .lang-es{display:none}
+  body.spanish .lang-en{display:none}
+  body.spanish .lang-es{display:block}
+  .lang-bar{background:var(--purple-deep);display:flex;justify-content:flex-end;align-items:center;padding:.35rem 2rem;gap:.5rem;font-size:.8rem;color:rgba(255,255,255,.6)}
+  .lang-btn{background:transparent;border:1px solid rgba(255,255,255,.3);color:rgba(255,255,255,.75);padding:.2rem .75rem;border-radius:99px;font-size:.75rem;font-weight:600;cursor:pointer;font-family:'Inter',sans-serif;transition:all .15s}
+  .lang-btn.active{background:var(--white);color:var(--purple);border-color:var(--white)}
+  nav{position:sticky;top:0;z-index:100;background:var(--purple);display:flex;align-items:center;justify-content:space-between;padding:0 2rem;height:66px;border-bottom:3px solid rgba(255,255,255,.2)}
+  .nav-logo{display:flex;flex-direction:column;line-height:1.1;text-decoration:none}
+  .nav-logo-main{font-family:'Barlow Condensed',sans-serif;font-size:1.65rem;font-weight:800;color:var(--white);letter-spacing:.04em}
+  .nav-logo-sub{font-size:.62rem;font-weight:500;color:rgba(255,255,255,.5);letter-spacing:.1em;text-transform:uppercase}
+  .nav-links{display:flex;gap:.15rem;list-style:none}
+  .nav-links a{color:rgba(255,255,255,.78);text-decoration:none;font-size:.85rem;font-weight:500;padding:.4rem .7rem;border-radius:var(--radius);transition:color .15s,background .15s}
+  .nav-links a:hover{color:var(--white);background:rgba(255,255,255,.1)}
+  .nav-cta{background:var(--white)!important;color:var(--purple)!important;font-weight:700!important;padding:.4rem 1rem!important}
+  .hero{background:var(--purple);color:var(--white);padding:5rem 2rem 4rem;text-align:center;position:relative;overflow:hidden}
+  .hero::before{content:'';position:absolute;inset:0;background:repeating-linear-gradient(45deg,transparent,transparent 50px,rgba(255,255,255,.02) 50px,rgba(255,255,255,.02) 100px)}
+  .hero-frog{font-size:3.5rem;display:block;margin-bottom:1rem;position:relative;animation:bob 3s ease-in-out infinite}
+  @keyframes bob{0%,100%{transform:translateY(0)}50%{transform:translateY(-6px)}}
+  .hero-badge{display:inline-block;background:rgba(255,255,255,.13);border:1px solid rgba(255,255,255,.22);color:rgba(255,255,255,.9);font-size:.75rem;font-weight:600;letter-spacing:.1em;text-transform:uppercase;padding:.35rem 1rem;border-radius:99px;margin-bottom:1.5rem}
+  .hero h1{font-family:'Barlow Condensed',sans-serif;font-size:clamp(2.75rem,7vw,5rem);font-weight:800;line-height:1;margin-bottom:.5rem;position:relative}
+  .hero h1 em{color:rgba(255,255,255,.5);font-style:normal;font-size:.52em;display:block;letter-spacing:.06em;font-weight:600}
+  .hero-sub{font-size:1.1rem;color:rgba(255,255,255,.68);max-width:520px;margin:1rem auto 2rem;position:relative}
+  .hero-btns{display:flex;gap:1rem;justify-content:center;flex-wrap:wrap;position:relative}
+  .btn-primary{background:var(--white);color:var(--purple);border:none;padding:.8rem 1.75rem;border-radius:var(--radius);font-size:1rem;font-weight:700;cursor:pointer;text-decoration:none;display:inline-block;transition:background .15s,transform .1s}
+  .btn-primary:hover{background:var(--purple-pale);transform:translateY(-1px)}
+  .btn-outline{background:transparent;color:var(--white);border:1.5px solid rgba(255,255,255,.42);padding:.8rem 1.75rem;border-radius:var(--radius);font-size:1rem;font-weight:500;cursor:pointer;text-decoration:none;display:inline-block;transition:all .15s}
+  .btn-outline:hover{border-color:rgba(255,255,255,.9);background:rgba(255,255,255,.07)}
+  .hero-stats{display:flex;justify-content:center;gap:3rem;margin-top:3.5rem;padding-top:2.5rem;border-top:1px solid rgba(255,255,255,.14);position:relative;flex-wrap:wrap}
+  .hero-stat-num{font-family:'Barlow Condensed',sans-serif;font-size:2.25rem;font-weight:800;color:var(--white);display:block;line-height:1}
+  .hero-stat-label{font-size:.72rem;color:rgba(255,255,255,.48);text-transform:uppercase;letter-spacing:.06em;margin-top:.25rem;display:block}
+  section{padding:5rem 2rem}
+  .container{max-width:1100px;margin:0 auto}
+  .section-label{font-size:.72rem;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--purple-mid);margin-bottom:.65rem}
+  .section-title{font-family:'Barlow Condensed',sans-serif;font-size:clamp(1.75rem,4vw,2.75rem);font-weight:800;color:var(--purple-deep);line-height:1.1;margin-bottom:.9rem}
+  .section-sub{font-size:1rem;color:var(--text-mid);max-width:560px;margin-bottom:2.75rem;line-height:1.7}
+  #services,#services-es{background:var(--purple-mist)}
+  .service-tabs{display:flex;gap:.5rem;flex-wrap:wrap;margin-bottom:2.5rem}
+  .tab-btn{background:var(--white);border:1.5px solid var(--border);color:var(--text-mid);padding:.5rem 1.1rem;border-radius:99px;font-size:.875rem;font-weight:500;cursor:pointer;transition:all .15s;font-family:'Inter',sans-serif}
+  .tab-btn:hover{border-color:var(--purple);color:var(--purple)}
+  .tab-btn.active{background:var(--purple);border-color:var(--purple);color:var(--white);font-weight:600}
+  .service-panel{display:none}
+  .service-panel.active{display:grid;grid-template-columns:1fr 1fr;gap:2.5rem;align-items:start}
+  .service-info h3{font-family:'Barlow Condensed',sans-serif;font-size:2rem;font-weight:800;color:var(--purple-deep);margin-bottom:.75rem}
+  .service-info p{color:var(--text-mid);margin-bottom:1.25rem;line-height:1.7}
+  .service-features{list-style:none;margin-bottom:1.25rem}
+  .service-features li{display:flex;align-items:flex-start;gap:.65rem;padding:.45rem 0;font-size:.925rem;color:var(--text-mid);border-bottom:1px solid var(--purple-mist)}
+  .service-features li:last-child{border-bottom:none}
+  .check{width:18px;height:18px;background:var(--purple);border-radius:50%;display:flex;align-items:center;justify-content:center;flex-shrink:0;margin-top:2px}
+  .check::after{content:'';width:9px;height:5px;border-left:2px solid white;border-bottom:2px solid white;transform:rotate(-45deg) translateY(-1px);display:block}
+  .service-visual{background:var(--purple);border-radius:var(--radius-lg);overflow:hidden;aspect-ratio:4/3;position:relative;display:flex;flex-direction:column;justify-content:flex-end;padding:1.5rem}
+  .service-visual-icon{position:absolute;top:50%;left:50%;transform:translate(-50%,-60%);opacity:.1;font-size:7rem}
+  .service-visual-tag{background:rgba(255,255,255,.1);border:1px solid rgba(255,255,255,.2);border-radius:var(--radius);padding:.9rem 1rem;position:relative;z-index:1}
+  .service-visual-tag h4{color:var(--white);font-size:.975rem;font-weight:600;margin-bottom:.25rem}
+  .service-visual-tag p{color:rgba(255,255,255,.6);font-size:.8rem;margin:0}
+  .service-tip{background:var(--purple-pale);border-left:3px solid var(--purple);border-radius:0 var(--radius) var(--radius) 0;padding:.85rem 1rem;font-size:.875rem;color:var(--purple-dark);margin-top:1.25rem}
+  .service-tip strong{display:block;margin-bottom:.2rem;font-weight:700;color:var(--purple)}
+  .process-steps{display:grid;grid-template-columns:repeat(auto-fit,minmax(185px,1fr));gap:1.25rem}
+  .process-step{background:var(--purple-mist);border-radius:var(--radius-lg);padding:1.4rem;border:1.5px solid var(--border)}
+  .step-num{font-family:'Barlow Condensed',sans-serif;font-size:.72rem;font-weight:700;letter-spacing:.1em;color:var(--purple-mid);text-transform:uppercase;margin-bottom:.4rem}
+  .process-step h4{font-weight:600;font-size:1rem;color:var(--purple-deep);margin-bottom:.35rem}
+  .process-step p{font-size:.86rem;color:var(--text-mid);line-height:1.6}
+  .why-section{background:var(--purple);padding:5rem 2rem}
+  .why-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:1.25rem}
+  .why-card{background:rgba(255,255,255,.07);border:1px solid rgba(255,255,255,.12);border-radius:var(--radius-lg);padding:1.5rem;transition:background .15s}
+  .why-card:hover{background:rgba(255,255,255,.11)}
+  .why-icon{width:40px;height:40px;background:rgba(255,255,255,.12);border-radius:var(--radius);display:flex;align-items:center;justify-content:center;margin-bottom:.9rem;font-size:1.15rem}
+  .why-card h4{font-weight:600;font-size:.975rem;color:var(--white);margin-bottom:.35rem}
+  .why-card p{font-size:.86rem;color:rgba(255,255,255,.52);line-height:1.6}
+  .faq-section{background:var(--purple-mist);padding:5rem 2rem}
+  .faq-list{max-width:740px}
+  .faq-item{border:1.5px solid var(--border);border-radius:var(--radius-lg);margin-bottom:.75rem;overflow:hidden;background:var(--white)}
+  .faq-q{width:100%;background:none;border:none;padding:1.1rem 1.25rem;text-align:left;font-family:'Inter',sans-serif;font-size:.95rem;font-weight:600;color:var(--purple-deep);cursor:pointer;display:flex;justify-content:space-between;align-items:center;gap:1rem;transition:background .1s}
+  .faq-q:hover{background:var(--purple-mist)}
+  .faq-arrow{width:22px;height:22px;border-radius:50%;background:var(--grey-light);display:flex;align-items:center;justify-content:center;flex-shrink:0;transition:transform .2s,background .15s;font-size:.7rem;color:var(--text-mid)}
+  .faq-item.open .faq-arrow{transform:rotate(180deg);background:var(--purple);color:var(--white)}
+  .faq-a{display:none;padding:0 1.25rem 1.1rem;font-size:.9rem;color:var(--text-mid);line-height:1.7;border-top:1px solid var(--border)}
+  .faq-item.open .faq-a{display:block}
+  .contact-section{background:var(--white);padding:5rem 2rem}
+  .contact-grid{display:grid;grid-template-columns:1fr 1.25fr;gap:3rem;align-items:start}
+  .contact-info h3{font-family:'Barlow Condensed',sans-serif;font-size:1.65rem;font-weight:800;color:var(--purple-deep);margin-bottom:.7rem}
+  .contact-info p{color:var(--text-mid);margin-bottom:1.5rem;font-size:.95rem}
+  .contact-detail{display:flex;align-items:center;gap:.75rem;padding:.75rem 0;border-bottom:1px solid var(--grey-light);font-size:.9rem}
+  .contact-detail:last-child{border-bottom:none}
+  .contact-icon{width:36px;height:36px;background:var(--purple-pale);border-radius:var(--radius);display:flex;align-items:center;justify-content:center;color:var(--purple);font-size:1rem;flex-shrink:0}
+  .contact-detail span{color:var(--text-mid);display:block}
+  .contact-detail strong{display:block;color:var(--purple-deep);font-weight:600}
+  .contact-form{background:var(--purple-mist);border:1.5px solid var(--border);border-radius:var(--radius-lg);padding:2rem}
+  .form-row{display:grid;grid-template-columns:1fr 1fr;gap:1rem}
+  .form-group{margin-bottom:1rem}
+  .form-group label{display:block;font-size:.78rem;font-weight:700;color:var(--purple-deep);margin-bottom:.4rem;text-transform:uppercase;letter-spacing:.06em}
+  .form-group input,.form-group select,.form-group textarea{width:100%;padding:.65rem .85rem;border:1.5px solid var(--border);border-radius:var(--radius);font-family:'Inter',sans-serif;font-size:.9rem;color:var(--text);background:var(--white);transition:border-color .15s;outline:none}
+  .form-group input:focus,.form-group select:focus,.form-group textarea:focus{border-color:var(--purple)}
+  .form-group textarea{resize:vertical;min-height:95px}
+  .form-submit{width:100%;background:var(--purple);color:var(--white);border:none;padding:.9rem;border-radius:var(--radius);font-family:'Inter',sans-serif;font-size:1rem;font-weight:700;cursor:pointer;transition:background .15s;margin-top:.5rem}
+  .form-submit:hover{background:var(--purple-dark)}
+  .form-success{display:none;text-align:center;padding:2.5rem 1rem;grid-column:2}
+  .form-success .big{font-size:2.5rem;margin-bottom:.75rem}
+  .form-success h4{font-weight:700;color:var(--purple-deep);margin-bottom:.4rem;font-size:1.1rem}
+  .form-success p{color:var(--text-mid);font-size:.9rem}
+  footer{background:var(--purple-deep);color:rgba(255,255,255,.45);text-align:center;padding:2rem;font-size:.82rem;border-top:3px solid var(--purple-mid)}
+  footer strong{color:var(--white)}
+  .footer-frog{font-size:1.5rem;display:block;margin-bottom:.5rem}
+  @media(max-width:720px){.service-panel.active{grid-template-columns:1fr}.contact-grid{grid-template-columns:1fr}.form-row{grid-template-columns:1fr}.nav-links{display:none}.hero{padding:3.5rem 1.25rem 3rem}section{padding:3.5rem 1.25rem}}
+</style>
+</head>
+<body>
+
+<div class="lang-bar">
+  <button class="lang-btn active" id="btn-en" onclick="setLang('en')">🇺🇸 English</button>
+  <button class="lang-btn" id="btn-es" onclick="setLang('es')">🇲🇽 Español</button>
+</div>
+
+<!-- ENGLISH NAV -->
+<nav class="lang-en">
+  <a class="nav-logo" href="#"><span class="nav-logo-main">🐸 LA RANA</span><span class="nav-logo-sub">General Contractors · Texas</span></a>
+  <ul class="nav-links">
+    <li><a href="#services">Services</a></li><li><a href="#process">Our Process</a></li>
+    <li><a href="#why">Why Us</a></li><li><a href="#faq">FAQ</a></li>
+    <li><a href="#contact" class="nav-cta">Free Estimate</a></li>
+  </ul>
+</nav>
+
+<!-- SPANISH NAV -->
+<nav class="lang-es">
+  <a class="nav-logo" href="#"><span class="nav-logo-main">🐸 LA RANA</span><span class="nav-logo-sub">Contratistas Generales · Texas</span></a>
+  <ul class="nav-links">
+    <li><a href="#services-es">Servicios</a></li><li><a href="#process-es">Proceso</a></li>
+    <li><a href="#why-es">Por Qué Nosotros</a></li><li><a href="#faq-es">Preguntas</a></li>
+    <li><a href="#contact-es" class="nav-cta">Presupuesto Gratis</a></li>
+  </ul>
+</nav>
+
+<!-- ======== ENGLISH HERO ======== -->
+<section class="hero lang-en">
+  <span class="hero-frog">🐸</span>
+  <div class="hero-badge">Serving All of Texas — Licensed &amp; Insured</div>
+  <h1>LA RANA<em>"The Frog" — Built Tough. Built Right.</em></h1>
+  <p class="hero-sub">General contracting across custom homes, roofing, gutters, fencing, concrete, and more — from your first call to the final walkthrough.</p>
+  <div class="hero-btns">
+    <a href="#contact" class="btn-primary">Get a Free Estimate</a>
+    <a href="#services" class="btn-outline">View Our Services</a>
+  </div>
+  <div class="hero-stats">
+    <div><span class="hero-stat-num">500+</span><span class="hero-stat-label">Projects Completed</span></div>
+    <div><span class="hero-stat-num">15+</span><span class="hero-stat-label">Years Experience</span></div>
+    <div><span class="hero-stat-num">100%</span><span class="hero-stat-label">Licensed &amp; Insured</span></div>
+    <div><span class="hero-stat-num">Texas</span><span class="hero-stat-label">Statewide Service</span></div>
+  </div>
+</section>
+
+<!-- ======== SPANISH HERO ======== -->
+<section class="hero lang-es">
+  <span class="hero-frog">🐸</span>
+  <div class="hero-badge">Sirviendo Todo Texas — Licenciados y Asegurados</div>
+  <h1>LA RANA<em>Construido con Fuerza. Construido Bien.</em></h1>
+  <p class="hero-sub">Contratación general en casas personalizadas, techos, canaletas, cercas, concreto y más — desde tu primera llamada hasta la entrega final.</p>
+  <div class="hero-btns">
+    <a href="#contact-es" class="btn-primary">Presupuesto Gratis</a>
+    <a href="#services-es" class="btn-outline">Ver Servicios</a>
+  </div>
+  <div class="hero-stats">
+    <div><span class="hero-stat-num">500+</span><span class="hero-stat-label">Proyectos Terminados</span></div>
+    <div><span class="hero-stat-num">15+</span><span class="hero-stat-label">Años de Experiencia</span></div>
+    <div><span class="hero-stat-num">100%</span><span class="hero-stat-label">Licenciados y Asegurados</span></div>
+    <div><span class="hero-stat-num">Texas</span><span class="hero-stat-label">Servicio Estatal</span></div>
+  </div>
+</section>
+
+<!-- ======== ENGLISH SERVICES ======== -->
+<section id="services" class="lang-en">
+  <div class="container">
+    <div class="section-label">What We Do</div>
+    <h2 class="section-title">Our Services</h2>
+    <p class="section-sub">Click any service for details, what's included, and expert Texas tips for your project.</p>
+    <div class="service-tabs" id="en-tabs">
+      <button class="tab-btn active" onclick="showSvc('en','en-homes',this)">Custom Home Building</button>
+      <button class="tab-btn" onclick="showSvc('en','en-roofing',this)">Roofing</button>
+      <button class="tab-btn" onclick="showSvc('en','en-drainage',this)">Drainage &amp; Gutters</button>
+      <button class="tab-btn" onclick="showSvc('en','en-fencing',this)">Wood &amp; Metal Fencing</button>
+      <button class="tab-btn" onclick="showSvc('en','en-concrete',this)">Concrete</button>
+      <button class="tab-btn" onclick="showSvc('en','en-remodel',this)">Remodeling &amp; ADUs</button>
+      <button class="tab-btn" onclick="showSvc('en','en-storm',this)">Storm Restoration</button>
+      <button class="tab-btn" onclick="showSvc('en','en-commercial',this)">Commercial</button>
+    </div>
+    <div class="service-panel active" id="en-homes">
+      <div class="service-info"><h3>Custom Home Building</h3><p>We build custom homes from the ground up across Texas — working closely with you from design and permitting all the way to move-in day. No cookie-cutter builds. Every home is designed around how you actually live.</p>
+      <ul class="service-features"><li><span class="check"></span>Full custom home design &amp; build</li><li><span class="check"></span>Site preparation, grading &amp; foundations</li><li><span class="check"></span>Framing, roofing, exterior &amp; interior finishes</li><li><span class="check"></span>Electrical, plumbing &amp; HVAC coordination</li><li><span class="check"></span>Permit acquisition &amp; inspection management</li><li><span class="check"></span>Energy-efficient builds &amp; spray foam insulation</li></ul>
+      <div class="service-tip"><strong>Texas Build Tip</strong>Budget 10–15% over your base build cost for site work and utilities. Texas clay soil often requires pier &amp; beam or reinforced slab foundations — we advise based on your specific lot.</div></div>
+      <div class="service-visual" style="background:linear-gradient(155deg,#3a1259,#6b2fa0)"><div class="service-visual-icon">🏡</div><div class="service-visual-tag"><h4>From Empty Lot to Move-In Ready</h4><p>We manage every phase so you don't have to coordinate 12 different contractors.</p></div></div>
+    </div>
+    <div class="service-panel" id="en-roofing">
+      <div class="service-info"><h3>Roofing</h3><p>From minor repairs after a Texas hail storm to full roof replacements. We work with shingles, metal, TPO, and modified bitumen systems for residential and commercial properties.</p>
+      <ul class="service-features"><li><span class="check"></span>Full roof replacements (shingle, metal, flat)</li><li><span class="check"></span>Storm &amp; hail damage repair</li><li><span class="check"></span>Roof inspections &amp; insurance documentation</li><li><span class="check"></span>Underlayment, decking &amp; ventilation</li><li><span class="check"></span>Flashing, ridge caps &amp; skylights</li><li><span class="check"></span>Emergency tarping &amp; leak patching</li></ul>
+      <div class="service-tip"><strong>Texas Homeowner Tip</strong>After any hail storm, get an inspection within 30 days. Texas insurance policies often have strict deadlines on storm damage claims.</div></div>
+      <div class="service-visual" style="background:linear-gradient(155deg,#280d40,#4D1979)"><div class="service-visual-icon">🏠</div><div class="service-visual-tag"><h4>Most Common in Texas: Hail Damage</h4><p>DFW averages 3–5 significant hail events per year. A free inspection takes 20 minutes.</p></div></div>
+    </div>
+    <div class="service-panel" id="en-drainage">
+      <div class="service-info"><h3>Drainage &amp; Gutters</h3><p>Poor drainage is one of the most damaging and overlooked issues for Texas properties. We design systems that move water away from your foundation before it causes expensive problems.</p>
+      <ul class="service-features"><li><span class="check"></span>Seamless aluminum &amp; steel gutter installation</li><li><span class="check"></span>Gutter guards &amp; leaf protection</li><li><span class="check"></span>French drains &amp; channel drains</li><li><span class="check"></span>Yard grading &amp; slope correction</li><li><span class="check"></span>Downspout extensions &amp; underground routing</li><li><span class="check"></span>Drainage problem diagnosis</li></ul>
+      <div class="service-tip"><strong>Texas Drainage Tip</strong>Clay-heavy North Texas soil doesn't absorb water well. Pooling within 6 feet of your foundation after rain is the leading cause of foundation shifts.</div></div>
+      <div class="service-visual" style="background:linear-gradient(155deg,#1a3040,#4D1979)"><div class="service-visual-icon">🌧️</div><div class="service-visual-tag"><h4>Foundation Protection Starts at the Roof</h4><p>Proper drainage is the best foundation insurance money can buy.</p></div></div>
+    </div>
+    <div class="service-panel" id="en-fencing">
+      <div class="service-info"><h3>Wood &amp; Metal Fencing</h3><p>We build fences that define your property, provide real privacy, and hold up against Texas weather — from cedar privacy fences to ornamental iron and automated gates.</p>
+      <ul class="service-features"><li><span class="check"></span>Cedar &amp; treated pine privacy fencing</li><li><span class="check"></span>Ornamental iron &amp; steel fencing</li><li><span class="check"></span>Chain-link (residential &amp; commercial)</li><li><span class="check"></span>Automated driveway gates</li><li><span class="check"></span>Fence repair, board replacement &amp; staining</li><li><span class="check"></span>Survey-based property line installation</li></ul>
+      <div class="service-tip"><strong>Wood Fence Tip</strong>Cedar is the best all-around choice for Texas — naturally rot-resistant and handles heat expansion better than pine.</div></div>
+      <div class="service-visual" style="background:linear-gradient(155deg,#2a1259,#5a2090)"><div class="service-visual-icon">🌲</div><div class="service-visual-tag"><h4>Wood vs. Metal: What's Right for You?</h4><p>Wood offers warmth and privacy at lower cost. Metal provides decades of low-maintenance durability.</p></div></div>
+    </div>
+    <div class="service-panel" id="en-concrete">
+      <div class="service-info"><h3>Concrete Services</h3><p>From driveways to patios, retaining walls to commercial pads — concrete built for the Texas climate, engineered to handle heat expansion and heavy use over time.</p>
+      <ul class="service-features"><li><span class="check"></span>Driveways, aprons &amp; approach pads</li><li><span class="check"></span>Patios, walkways &amp; pool decks</li><li><span class="check"></span>Retaining walls &amp; garden borders</li><li><span class="check"></span>Stamped &amp; decorative concrete finishes</li><li><span class="check"></span>Commercial slabs &amp; parking pads</li><li><span class="check"></span>Concrete repair, resurfacing &amp; sealing</li></ul>
+      <div class="service-tip"><strong>Concrete Tip</strong>Control joints guide where concrete cracks so it happens out of sight. A properly jointed driveway lasts 25–30 years in Texas conditions.</div></div>
+      <div class="service-visual" style="background:linear-gradient(155deg,#1f1525,#4D1979)"><div class="service-visual-icon">🏗️</div><div class="service-visual-tag"><h4>Stamped Concrete vs. Pavers</h4><p>Stamped concrete gives the look of stone or brick at a fraction of the cost, with no weeds between joints.</p></div></div>
+    </div>
+    <div class="service-panel" id="en-remodel">
+      <div class="service-info"><h3>Remodeling &amp; ADUs</h3><p>Kitchen and bathroom remodels, room additions, and accessory dwelling units (ADUs/casitas) are among the highest-demand services in Texas right now. We handle full scope — demo to final finish.</p>
+      <ul class="service-features"><li><span class="check"></span>Kitchen &amp; bathroom remodels</li><li><span class="check"></span>Room additions &amp; home expansions</li><li><span class="check"></span>Accessory dwelling units (guest houses / casitas)</li><li><span class="check"></span>Garage conversions &amp; enclosures</li><li><span class="check"></span>Flooring, drywall &amp; interior carpentry</li><li><span class="check"></span>Exterior facelifts &amp; curb appeal upgrades</li></ul>
+      <div class="service-tip"><strong>ADU Demand Is Surging in Texas</strong>Many Texas homeowners are adding casitas or garage apartments for rental income. ADUs typically return 70–80% of build cost in added home value.</div></div>
+      <div class="service-visual" style="background:linear-gradient(155deg,#2d1060,#7e4bb5)"><div class="service-visual-icon">🛠️</div><div class="service-visual-tag"><h4>Expand Your Space, Increase Your Value</h4><p>An ADU can generate $800–$1,500/month in rental income in the DFW area.</p></div></div>
+    </div>
+    <div class="service-panel" id="en-storm">
+      <div class="service-info"><h3>Storm Damage Restoration</h3><p>Texas storms don't wait for a convenient time. We offer rapid-response restoration covering roofing, siding, windows, fencing, and structural repairs — with full insurance claim support.</p>
+      <ul class="service-features"><li><span class="check"></span>Emergency tarping &amp; board-up</li><li><span class="check"></span>Hail &amp; wind damage roof replacement</li><li><span class="check"></span>Siding &amp; exterior panel repair</li><li><span class="check"></span>Window &amp; door replacement</li><li><span class="check"></span>Insurance adjuster meeting support</li><li><span class="check"></span>Full damage documentation &amp; photo reports</li></ul>
+      <div class="service-tip"><strong>Act Fast on Storm Claims</strong>Most Texas insurers require storm damage to be reported within 1 year. The sooner you file, the stronger your claim. We document everything.</div></div>
+      <div class="service-visual" style="background:linear-gradient(155deg,#1a0a2e,#4D1979)"><div class="service-visual-icon">⛈️</div><div class="service-visual-tag"><h4>We Work With Your Insurance</h4><p>We've navigated hundreds of Texas insurance claims and know how to get your property fully restored.</p></div></div>
+    </div>
+    <div class="service-panel" id="en-commercial">
+      <div class="service-info"><h3>Commercial Construction</h3><p>From retail buildouts and office renovations to warehouses, parking lots, and commercial roofing — we serve business owners, property managers, and developers across Texas.</p>
+      <ul class="service-features"><li><span class="check"></span>Retail &amp; restaurant tenant buildouts</li><li><span class="check"></span>Office renovation &amp; fit-outs</li><li><span class="check"></span>Warehouse &amp; industrial construction</li><li><span class="check"></span>Commercial roofing (TPO, EPDM, metal)</li><li><span class="check"></span>Parking lots, curbs &amp; concrete pads</li><li><span class="check"></span>ADA compliance upgrades</li></ul>
+      <div class="service-tip"><strong>Commercial Build Tip</strong>Fort Worth added $6.7 billion in new capital investment in 2025. Commercial build timelines are tight — get your contractor lined up early to secure your start date.</div></div>
+      <div class="service-visual" style="background:linear-gradient(155deg,#0d0020,#4D1979)"><div class="service-visual-icon">🏢</div><div class="service-visual-tag"><h4>Texas Is Building Fast — We Keep Up</h4><p>We coordinate directly with property managers and developers to meet tight commercial timelines.</p></div></div>
+    </div>
+  </div>
+</section>
+
+<!-- ======== SPANISH SERVICES ======== -->
+<section id="services-es" class="lang-es">
+  <div class="container">
+    <div class="section-label">Lo Que Hacemos</div>
+    <h2 class="section-title">Nuestros Servicios</h2>
+    <p class="section-sub">Haz clic en cualquier servicio para ver detalles, qué está incluido y consejos de expertos para tu proyecto.</p>
+    <div class="service-tabs" id="es-tabs">
+      <button class="tab-btn active" onclick="showSvc('es','es-homes',this)">Construcción de Casas</button>
+      <button class="tab-btn" onclick="showSvc('es','es-roofing',this)">Techos</button>
+      <button class="tab-btn" onclick="showSvc('es','es-drainage',this)">Drenaje y Canaletas</button>
+      <button class="tab-btn" onclick="showSvc('es','es-fencing',this)">Cercas</button>
+      <button class="tab-btn" onclick="showSvc('es','es-concrete',this)">Concreto</button>
+      <button class="tab-btn" onclick="showSvc('es','es-remodel',this)">Remodelaciones y ADUs</button>
+      <button class="tab-btn" onclick="showSvc('es','es-storm',this)">Restauración por Tormentas</button>
+      <button class="tab-btn" onclick="showSvc('es','es-commercial',this)">Construcción Comercial</button>
+    </div>
+    <div class="service-panel active" id="es-homes">
+      <div class="service-info"><h3>Construcción de Casas Personalizadas</h3><p>Construimos casas personalizadas desde cero en todo Texas — trabajando contigo desde el diseño y los permisos hasta el día de la mudanza. Sin construcciones genéricas. Cada casa se diseña según cómo vives realmente.</p>
+      <ul class="service-features"><li><span class="check"></span>Diseño y construcción completa de casas personalizadas</li><li><span class="check"></span>Preparación del sitio, nivelación y cimientos</li><li><span class="check"></span>Estructura, techos, acabados exteriores e interiores</li><li><span class="check"></span>Coordinación eléctrica, plomería y HVAC</li><li><span class="check"></span>Obtención de permisos y gestión de inspecciones</li><li><span class="check"></span>Construcción eficiente con aislamiento de espuma</li></ul>
+      <div class="service-tip"><strong>Consejo de Construcción en Texas</strong>Presupuesta un 10–15% extra sobre el costo base para trabajo del sitio y servicios. El suelo arcilloso de Texas frecuentemente requiere cimientos especiales — te asesoramos según tu terreno.</div></div>
+      <div class="service-visual" style="background:linear-gradient(155deg,#3a1259,#6b2fa0)"><div class="service-visual-icon">🏡</div><div class="service-visual-tag"><h4>Del Terreno Vacío al Hogar Listo</h4><p>Manejamos cada fase para que no tengas que coordinar con 12 contratistas diferentes.</p></div></div>
+    </div>
+    <div class="service-panel" id="es-roofing">
+      <div class="service-info"><h3>Techos</h3><p>Desde reparaciones menores tras granizadas en Texas hasta reemplazos completos de techo. Trabajamos con tejas, metal, TPO y sistemas de bitumen modificado para propiedades residenciales y comerciales.</p>
+      <ul class="service-features"><li><span class="check"></span>Reemplazo completo de techos (tejas, metal, plano)</li><li><span class="check"></span>Reparación de daños por tormentas y granizo</li><li><span class="check"></span>Inspecciones y documentación para seguros</li><li><span class="check"></span>Membrana, tablero y ventilación</li><li><span class="check"></span>Tapajuntas, caballetes y claraboyas</li><li><span class="check"></span>Lona de emergencia y reparación de goteras</li></ul>
+      <div class="service-tip"><strong>Consejo para Propietarios en Texas</strong>Después de una granizada, solicita una inspección dentro de 30 días. Las pólizas de Texas tienen plazos estrictos para reclamaciones por tormentas.</div></div>
+      <div class="service-visual" style="background:linear-gradient(155deg,#280d40,#4D1979)"><div class="service-visual-icon">🏠</div><div class="service-visual-tag"><h4>Lo Más Común en Texas: Daños por Granizo</h4><p>DFW promedia 3–5 eventos importantes de granizo al año. Una inspección gratuita toma 20 minutos.</p></div></div>
+    </div>
+    <div class="service-panel" id="es-drainage">
+      <div class="service-info"><h3>Drenaje y Canaletas</h3><p>El drenaje deficiente es uno de los problemas más dañinos en propiedades de Texas. Diseñamos sistemas que alejan el agua de tu cimiento antes de que cause daños costosos.</p>
+      <ul class="service-features"><li><span class="check"></span>Instalación de canaletas de aluminio y acero sin costuras</li><li><span class="check"></span>Protectores de canaletas contra hojas</li><li><span class="check"></span>Drenes franceses y drenes de canal</li><li><span class="check"></span>Nivelación de patio y corrección de pendiente</li><li><span class="check"></span>Extensiones de bajantes y tuberías subterráneas</li><li><span class="check"></span>Diagnóstico de problemas de drenaje</li></ul>
+      <div class="service-tip"><strong>Consejo de Drenaje en Texas</strong>El suelo arcilloso del norte de Texas no absorbe bien el agua. El encharcamiento cerca del cimiento es la principal causa de asentamientos de cimientos.</div></div>
+      <div class="service-visual" style="background:linear-gradient(155deg,#1a3040,#4D1979)"><div class="service-visual-icon">🌧️</div><div class="service-visual-tag"><h4>La Protección del Cimiento Empieza en el Techo</h4><p>Un buen drenaje es el mejor seguro para el cimiento que puedes tener.</p></div></div>
+    </div>
+    <div class="service-panel" id="es-fencing">
+      <div class="service-info"><h3>Cercas de Madera y Metal</h3><p>Construimos cercas que definen tu propiedad, brindan privacidad real y resisten el clima de Texas — desde cercas de cedro hasta hierro ornamental y portones automáticos.</p>
+      <ul class="service-features"><li><span class="check"></span>Cercas de privacidad de cedro y pino tratado</li><li><span class="check"></span>Cercas de hierro ornamental y acero</li><li><span class="check"></span>Malla ciclónica (residencial y comercial)</li><li><span class="check"></span>Portones de entrada automáticos</li><li><span class="check"></span>Reparación, reemplazo de tablas y tinción de cercas</li><li><span class="check"></span>Instalación basada en planos de propiedad</li></ul>
+      <div class="service-tip"><strong>Consejo para Cercas de Madera</strong>El cedro es la mejor opción en Texas — naturalmente resistente a la podredumbre y maneja mejor la expansión por calor que el pino.</div></div>
+      <div class="service-visual" style="background:linear-gradient(155deg,#2a1259,#5a2090)"><div class="service-visual-icon">🌲</div><div class="service-visual-tag"><h4>¿Madera o Metal? ¿Qué Es Lo Correcto para Ti?</h4><p>La madera ofrece calidez y privacidad a menor costo. El metal brinda décadas de durabilidad.</p></div></div>
+    </div>
+    <div class="service-panel" id="es-concrete">
+      <div class="service-info"><h3>Servicios de Concreto</h3><p>Desde entradas de autos hasta patios, muros de contención hasta losas comerciales — concreto diseñado para el clima de Texas y para resistir el uso intensivo con el tiempo.</p>
+      <ul class="service-features"><li><span class="check"></span>Entradas de autos, delantales y accesos</li><li><span class="check"></span>Patios, andadores y bordes de piscina</li><li><span class="check"></span>Muros de contención y bordillos de jardín</li><li><span class="check"></span>Acabados de concreto estampado y decorativo</li><li><span class="check"></span>Losas comerciales y estacionamientos</li><li><span class="check"></span>Reparación, resellado y sellado de concreto</li></ul>
+      <div class="service-tip"><strong>Consejo de Concreto</strong>Las juntas de control guían dónde se agrieta el concreto para que sea fuera de la vista. Una entrada bien construida dura 25–30 años en Texas.</div></div>
+      <div class="service-visual" style="background:linear-gradient(155deg,#1f1525,#4D1979)"><div class="service-visual-icon">🏗️</div><div class="service-visual-tag"><h4>Concreto Estampado vs. Adoquines</h4><p>El concreto estampado da el aspecto de piedra o ladrillo a menor precio, sin maleza entre las juntas.</p></div></div>
+    </div>
+    <div class="service-panel" id="es-remodel">
+      <div class="service-info"><h3>Remodelaciones y Unidades ADU</h3><p>Las remodelaciones de cocinas y baños, adiciones de cuartos y unidades de habitación accesoria (ADUs) son de los servicios más solicitados en Texas. Nos encargamos de todo — demolición hasta acabados finales.</p>
+      <ul class="service-features"><li><span class="check"></span>Remodelaciones de cocinas y baños</li><li><span class="check"></span>Adiciones de cuartos y ampliaciones</li><li><span class="check"></span>Unidades de habitación accesoria (casitas)</li><li><span class="check"></span>Conversión y cierre de garajes</li><li><span class="check"></span>Pisos, tablaroca y carpintería interior</li><li><span class="check"></span>Mejoras de fachada y atractivo exterior</li></ul>
+      <div class="service-tip"><strong>La Demanda de ADUs Está Aumentando en Texas</strong>Muchos propietarios en Texas están agregando casitas o apartamentos de garaje para ingresos por renta. Las ADUs suelen recuperar el 70–80% del costo en valor agregado.</div></div>
+      <div class="service-visual" style="background:linear-gradient(155deg,#2d1060,#7e4bb5)"><div class="service-visual-icon">🛠️</div><div class="service-visual-tag"><h4>Expande Tu Espacio, Aumenta Tu Valor</h4><p>Una ADU puede generar $800–$1,500/mes en ingresos de renta en el área de DFW.</p></div></div>
+    </div>
+    <div class="service-panel" id="es-storm">
+      <div class="service-info"><h3>Restauración por Daños de Tormentas</h3><p>Las tormentas de Texas no esperan. Ofrecemos restauración rápida cubriendo techos, revestimientos, ventanas, cercas y reparaciones estructurales — con soporte completo para reclamaciones de seguro.</p>
+      <ul class="service-features"><li><span class="check"></span>Lonas de emergencia y tapiado</li><li><span class="check"></span>Reemplazo de techo por daños de granizo y viento</li><li><span class="check"></span>Reparación de revestimiento exterior</li><li><span class="check"></span>Reemplazo de ventanas y puertas</li><li><span class="check"></span>Apoyo en reuniones con ajustadores de seguro</li><li><span class="check"></span>Documentación completa y reportes fotográficos</li></ul>
+      <div class="service-tip"><strong>Actúa Rápido en Reclamaciones por Tormenta</strong>La mayoría de los aseguradores en Texas requieren reportar daños dentro de 1 año. Entre más pronto presentes tu reclamación, más sólida será. Documentamos todo.</div></div>
+      <div class="service-visual" style="background:linear-gradient(155deg,#1a0a2e,#4D1979)"><div class="service-visual-icon">⛈️</div><div class="service-visual-tag"><h4>Trabajamos Con Tu Seguro</h4><p>Hemos tramitado cientos de reclamaciones de seguros en Texas y sabemos cómo restaurar completamente tu propiedad.</p></div></div>
+    </div>
+    <div class="service-panel" id="es-commercial">
+      <div class="service-info"><h3>Construcción Comercial</h3><p>Desde acabados de locales comerciales y renovaciones de oficinas hasta bodegas, estacionamientos y techos comerciales — servimos a dueños de negocios y desarrolladores en todo Texas.</p>
+      <ul class="service-features"><li><span class="check"></span>Acabados para locales comerciales y restaurantes</li><li><span class="check"></span>Renovación y acondicionamiento de oficinas</li><li><span class="check"></span>Construcción de bodegas e instalaciones industriales</li><li><span class="check"></span>Techos comerciales (TPO, EPDM, metal)</li><li><span class="check"></span>Estacionamientos, bordillos y losas de concreto</li><li><span class="check"></span>Mejoras de cumplimiento ADA (accesibilidad)</li></ul>
+      <div class="service-tip"><strong>Consejo para Construcción Comercial</strong>Fort Worth añadió $6.7 mil millones en inversión en 2025. Los plazos de construcción comercial son ajustados — asegura tu contratista con anticipación.</div></div>
+      <div class="service-visual" style="background:linear-gradient(155deg,#0d0020,#4D1979)"><div class="service-visual-icon">🏢</div><div class="service-visual-tag"><h4>Texas Está Creciendo Rápido — Nosotros También</h4><p>Coordinamos directamente con administradores y desarrolladores para cumplir plazos ajustados.</p></div></div>
+    </div>
+  </div>
+</section>
+
+<!-- ======== ENGLISH PROCESS ======== -->
+<section id="process" class="lang-en" style="background:#fff">
+  <div class="container">
+    <div class="section-label">How It Works</div>
+    <h2 class="section-title">Our Process</h2>
+    <p class="section-sub">No surprises. Every project follows the same clear steps so you always know what's happening.</p>
+    <div class="process-steps">
+      <div class="process-step"><div class="step-num">Step 01</div><h4>Free Estimate</h4><p>We visit your property, assess the job, and give you a detailed written estimate — free, no obligation.</p></div>
+      <div class="process-step"><div class="step-num">Step 02</div><h4>Scope &amp; Materials</h4><p>We walk you through material options, timelines, and the full scope so you can make an informed decision.</p></div>
+      <div class="process-step"><div class="step-num">Step 03</div><h4>Permits &amp; Scheduling</h4><p>We handle all permits where required and give you a firm start date. Your property is protected throughout.</p></div>
+      <div class="process-step"><div class="step-num">Step 04</div><h4>Construction</h4><p>Our crew shows up on time, works clean, and keeps you updated. We don't cut corners — ever.</p></div>
+      <div class="process-step"><div class="step-num">Step 05</div><h4>Final Walkthrough</h4><p>We walk the finished work with you before final payment. If something isn't right, we fix it — period.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- ======== SPANISH PROCESS ======== -->
+<section id="process-es" class="lang-es" style="background:#fff">
+  <div class="container">
+    <div class="section-label">Cómo Funciona</div>
+    <h2 class="section-title">Nuestro Proceso</h2>
+    <p class="section-sub">Sin sorpresas. Cada proyecto sigue los mismos pasos claros para que siempre sepas qué está pasando.</p>
+    <div class="process-steps">
+      <div class="process-step"><div class="step-num">Paso 01</div><h4>Presupuesto Gratis</h4><p>Visitamos tu propiedad, evaluamos el trabajo y te damos un presupuesto escrito detallado — gratis, sin compromiso.</p></div>
+      <div class="process-step"><div class="step-num">Paso 02</div><h4>Alcance y Materiales</h4><p>Te explicamos las opciones de materiales, los plazos y el alcance completo para que tomes una decisión informada.</p></div>
+      <div class="process-step"><div class="step-num">Paso 03</div><h4>Permisos y Programación</h4><p>Gestionamos todos los permisos necesarios y te damos una fecha de inicio firme. Tu propiedad está protegida durante todo el proceso.</p></div>
+      <div class="process-step"><div class="step-num">Paso 04</div><h4>Construcción</h4><p>Nuestro equipo llega puntual, trabaja con orden y te mantiene informado. No tomamos atajos — nunca.</p></div>
+      <div class="process-step"><div class="step-num">Paso 05</div><h4>Revisión Final</h4><p>Revisamos el trabajo terminado contigo antes del pago final. Si algo no está bien, lo arreglamos — sin discusión.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- ======== ENGLISH WHY ======== -->
+<section id="why" class="why-section lang-en">
+  <div class="container">
+    <div class="section-label" style="color:rgba(255,255,255,.45)">Why Choose Us</div>
+    <h2 class="section-title" style="color:#fff">What Makes La Rana Different</h2>
+    <p class="section-sub" style="color:rgba(255,255,255,.6)">A Texas-based crew that does the work ourselves — no subs, no surprises, bilingual service.</p>
+    <div class="why-grid">
+      <div class="why-card"><div class="why-icon">✓</div><h4>Licensed &amp; Fully Insured</h4><p>Every job is backed by liability insurance and workers' comp. You're protected from day one to completion.</p></div>
+      <div class="why-card"><div class="why-icon">🗣️</div><h4>Bilingual — English &amp; Spanish</h4><p>Our entire team communicates fluently in both languages. No miscommunications, no middlemen.</p></div>
+      <div class="why-card"><div class="why-icon">📋</div><h4>Written Estimates Only</h4><p>No verbal quotes. Every estimate is itemized in writing so you know exactly what you're paying for.</p></div>
+      <div class="why-card"><div class="why-icon">🔨</div><h4>We Do the Work Ourselves</h4><p>Our own crew handles your project start to finish — no flipping jobs to subcontractors you've never met.</p></div>
+      <div class="why-card"><div class="why-icon">⚡</div><h4>Fast Response &amp; Priority Scheduling</h4><p>Storm damage and urgent repairs get priority. We don't leave you waiting weeks to fix a leaking roof.</p></div>
+      <div class="why-card"><div class="why-icon">🏆</div><h4>Workmanship Warranty</h4><p>All work comes with a written workmanship warranty. We stand behind everything we build.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- ======== SPANISH WHY ======== -->
+<section id="why-es" class="why-section lang-es">
+  <div class="container">
+    <div class="section-label" style="color:rgba(255,255,255,.45)">Por Qué Elegirnos</div>
+    <h2 class="section-title" style="color:#fff">Qué Hace Diferente a La Rana</h2>
+    <p class="section-sub" style="color:rgba(255,255,255,.6)">Un equipo basado en Texas que hace el trabajo nosotros mismos — sin subcontratistas, sin sorpresas, servicio bilingüe.</p>
+    <div class="why-grid">
+      <div class="why-card"><div class="why-icon">✓</div><h4>Licenciados y Completamente Asegurados</h4><p>Cada trabajo está respaldado por seguro de responsabilidad civil y compensación laboral. Estás protegido desde el día uno.</p></div>
+      <div class="why-card"><div class="why-icon">🗣️</div><h4>Bilingüe — Inglés y Español</h4><p>Todo nuestro equipo se comunica fluidamente en ambos idiomas. Sin malentendidos, sin intermediarios.</p></div>
+      <div class="why-card"><div class="why-icon">📋</div><h4>Solo Presupuestos por Escrito</h4><p>Sin cotizaciones verbales. Cada presupuesto está detallado por escrito para que sepas exactamente qué pagas.</p></div>
+      <div class="why-card"><div class="why-icon">🔨</div><h4>Hacemos el Trabajo Nosotros Mismos</h4><p>Nuestro propio equipo maneja tu proyecto de principio a fin — sin pasar el trabajo a subcontratistas desconocidos.</p></div>
+      <div class="why-card"><div class="why-icon">⚡</div><h4>Respuesta Rápida y Prioridad</h4><p>Los daños por tormenta y reparaciones urgentes tienen prioridad. No te dejamos esperando semanas para arreglar una gotera.</p></div>
+      <div class="why-card"><div class="why-icon">🏆</div><h4>Garantía de Mano de Obra</h4><p>Todo el trabajo viene con una garantía escrita de mano de obra. Respaldamos todo lo que construimos.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- ======== ENGLISH FAQ ======== -->
+<section id="faq" class="faq-section lang-en">
+  <div class="container">
+    <div class="section-label">Common Questions</div>
+    <h2 class="section-title">FAQ</h2>
+    <p class="section-sub">Answers to the questions we hear most often from Texas homeowners and business owners.</p>
+    <div class="faq-list">
+      <div class="faq-item"><button class="faq-q" onclick="toggleFaq(this)">How long does a custom home build take?<span class="faq-arrow">▼</span></button><div class="faq-a">A typical custom home in Texas takes 8–14 months from permit approval to move-in, depending on size and complexity. We provide a detailed project schedule at contract signing so you can plan accordingly.</div></div>
+      <div class="faq-item"><button class="faq-q" onclick="toggleFaq(this)">How long does a full roof replacement take?<span class="faq-arrow">▼</span></button><div class="faq-a">Most residential roof replacements are completed in 1–2 days depending on size, pitch, and materials. We strip the old roof, inspect the decking, install new underlayment, and finish with your chosen material.</div></div>
+      <div class="faq-item"><button class="faq-q" onclick="toggleFaq(this)">Can you help with an insurance claim for storm damage?<span class="faq-arrow">▼</span></button><div class="faq-a">Yes. We provide detailed damage documentation — photos, measurements, written scope — that you submit directly to your insurance adjuster. We work with most major carriers and can be on-site during the adjuster's inspection.</div></div>
+      <div class="faq-item"><button class="faq-q" onclick="toggleFaq(this)">Do I need a permit for a fence or driveway?<span class="faq-arrow">▼</span></button><div class="faq-a">It depends on your city or county. Many Texas municipalities require permits for fences over a certain height and concrete work affecting drainage. We check all requirements and pull permits on your behalf.</div></div>
+      <div class="faq-item"><button class="faq-q" onclick="toggleFaq(this)">What areas of Texas do you serve?<span class="faq-arrow">▼</span></button><div class="faq-a">We serve all of Texas with a strong focus on DFW, Fort Worth, and surrounding areas. For larger projects like custom homes, we travel statewide. Contact us with your location and we'll confirm availability.</div></div>
+      <div class="faq-item"><button class="faq-q" onclick="toggleFaq(this)">Do you offer services in Spanish?<span class="faq-arrow">▼</span></button><div class="faq-a">Absolutely. Our entire team is bilingual — English and Spanish. From the first estimate to the final walkthrough, you can communicate with us in whichever language you prefer. No interpreter needed.</div></div>
+    </div>
+  </div>
+</section>
+
+<!-- ======== SPANISH FAQ ======== -->
+<section id="faq-es" class="faq-section lang-es">
+  <div class="container">
+    <div class="section-label">Preguntas Frecuentes</div>
+    <h2 class="section-title">Preguntas y Respuestas</h2>
+    <p class="section-sub">Respuestas a las preguntas que más escuchamos de propietarios y dueños de negocios en Texas.</p>
+    <div class="faq-list">
+      <div class="faq-item"><button class="faq-q" onclick="toggleFaq(this)">¿Cuánto tarda la construcción de una casa personalizada?<span class="faq-arrow">▼</span></button><div class="faq-a">Una casa personalizada típica en Texas tarda de 8 a 14 meses desde la aprobación del permiso hasta la mudanza, dependiendo del tamaño y la complejidad. Proporcionamos un calendario detallado al firmar el contrato.</div></div>
+      <div class="faq-item"><button class="faq-q" onclick="toggleFaq(this)">¿Cuánto tarda un reemplazo completo de techo?<span class="faq-arrow">▼</span></button><div class="faq-a">La mayoría de los reemplazos de techos residenciales se completan en 1–2 días según el tamaño, la pendiente y los materiales. Retiramos el techo viejo, inspeccionamos el tablero, instalamos nueva membrana y terminamos con el material elegido.</div></div>
+      <div class="faq-item"><button class="faq-q" onclick="toggleFaq(this)">¿Ayudan con reclamaciones de seguro por daños de tormenta?<span class="faq-arrow">▼</span></button><div class="faq-a">Sí. Proporcionamos documentación detallada de daños — fotos, medidas, alcance escrito — que presentas a tu ajustador de seguro. Trabajamos con la mayoría de las aseguradoras y podemos estar presentes durante la inspección del ajustador.</div></div>
+      <div class="faq-item"><button class="faq-q" onclick="toggleFaq(this)">¿Qué permisos necesito para una cerca o entrada de concreto?<span class="faq-arrow">▼</span></button><div class="faq-a">Depende de tu ciudad o condado. Muchos municipios en Texas requieren permisos para cercas de cierta altura y trabajos de concreto que afecten el drenaje. Verificamos los requisitos y obtenemos todos los permisos en tu nombre.</div></div>
+      <div class="faq-item"><button class="faq-q" onclick="toggleFaq(this)">¿Qué áreas de Texas atienden?<span class="faq-arrow">▼</span></button><div class="faq-a">Servimos todo Texas con enfoque especial en DFW, Fort Worth y sus alrededores. Para proyectos grandes como casas personalizadas, viajamos a todo el estado. Contáctanos con tu ubicación y confirmaremos disponibilidad.</div></div>
+      <div class="faq-item"><button class="faq-q" onclick="toggleFaq(this)">¿Atienden en español?<span class="faq-arrow">▼</span></button><div class="faq-a">Por supuesto. Todo nuestro equipo es bilingüe — inglés y español. Desde el primer presupuesto hasta la revisión final, puedes comunicarte con nosotros en el idioma con el que te sientas más cómodo. No se necesita intérprete.</div></div>
+    </div>
+  </div>
+</section>
+
+<!-- ======== ENGLISH CONTACT ======== -->
+<section id="contact" class="contact-section lang-en">
+  <div class="container">
+    <div class="section-label">Get In Touch</div>
+    <h2 class="section-title">Request a Free Estimate</h2>
+    <p class="section-sub">Fill out the form and we'll reach out within one business day to schedule your site visit.</p>
+    <div class="contact-grid">
+      <div class="contact-info">
+        <h3>We're Ready to Help 🐸</h3>
+        <p>Whether it's a new home, a leaking roof, or a new fence, we'll come out and give you a straight answer — no pressure, no gimmicks.</p>
+        <div class="contact-detail"><div class="contact-icon">📞</div><div><strong>(555) 000-0000</strong><span>Mon–Sat, 7am–6pm</span></div></div>
+        <div class="contact-detail"><div class="contact-icon">✉️</div><div><strong>info@laranacontractors.com</strong><span>Response within 24 hours</span></div></div>
+        <div class="contact-detail"><div class="contact-icon">📍</div><div><strong>Serving All of Texas</strong><span>Fort Worth, DFW &amp; statewide</span></div></div>
+        <div class="contact-detail"><div class="contact-icon">🗣️</div><div><strong>Bilingual Service</strong><span>English &amp; Spanish spoken here</span></div></div>
+        <div class="contact-detail"><div class="contact-icon">⚡</div><div><strong>Emergency Service Available</strong><span>Storm damage &amp; urgent repairs</span></div></div>
+      </div>
+      <div id="en-form-wrap" class="contact-form">
+        <div class="form-row">
+          <div class="form-group"><label>First Name</label><input type="text" id="en-fname" placeholder="John" /></div>
+          <div class="form-group"><label>Last Name</label><input type="text" id="en-lname" placeholder="Smith" /></div>
+        </div>
+        <div class="form-row">
+          <div class="form-group"><label>Phone</label><input type="tel" id="en-phone" placeholder="(817) 000-0000" /></div>
+          <div class="form-group"><label>Email</label><input type="email" id="en-email" placeholder="john@email.com" /></div>
+        </div>
+        <div class="form-group"><label>Service Needed</label>
+          <select id="en-service"><option value="">Select a service...</option><option>Custom Home Building</option><option>Roofing</option><option>Drainage &amp; Gutters</option><option>Wood Fencing</option><option>Metal Fencing</option><option>Concrete Services</option><option>Remodeling / ADU</option><option>Storm Damage Restoration</option><option>Commercial Construction</option><option>Multiple Services</option><option>Not Sure — Need Inspection</option></select>
+        </div>
+        <div class="form-group"><label>City / Location</label><input type="text" id="en-city" placeholder="Fort Worth, TX" /></div>
+        <div class="form-group"><label>Project Details</label><textarea id="en-notes" placeholder="Describe your project, timeline, or any concerns..."></textarea></div>
+        <button class="form-submit" onclick="submitForm('en')">Request Free Estimate →</button>
+      </div>
+      <div class="form-success" id="en-success"><div class="big">🐸</div><h4>We've got your request!</h4><p>Someone from La Rana will reach out within one business day to schedule your free estimate.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- ======== SPANISH CONTACT ======== -->
+<section id="contact-es" class="contact-section lang-es">
+  <div class="container">
+    <div class="section-label">Contáctanos</div>
+    <h2 class="section-title">Solicita un Presupuesto Gratis</h2>
+    <p class="section-sub">Llena el formulario y nos comunicaremos en un día hábil para programar la visita a tu propiedad.</p>
+    <div class="contact-grid">
+      <div class="contact-info">
+        <h3>Estamos Listos para Ayudarte 🐸</h3>
+        <p>Ya sea una casa nueva, una gotera o una cerca nueva, vendremos a darte una respuesta directa — sin presión, sin trucos.</p>
+        <div class="contact-detail"><div class="contact-icon">📞</div><div><strong>(555) 000-0000</strong><span>Lun–Sáb, 7am–6pm</span></div></div>
+        <div class="contact-detail"><div class="contact-icon">✉️</div><div><strong>info@laranacontractors.com</strong><span>Respuesta en 24 horas</span></div></div>
+        <div class="contact-detail"><div class="contact-icon">📍</div><div><strong>Sirviendo Todo Texas</strong><span>Fort Worth, DFW y todo el estado</span></div></div>
+        <div class="contact-detail"><div class="contact-icon">🗣️</div><div><strong>Servicio Bilingüe</strong><span>Se habla inglés y español aquí</span></div></div>
+        <div class="contact-detail"><div class="contact-icon">⚡</div><div><strong>Servicio de Emergencia Disponible</strong><span>Daños por tormenta y reparaciones urgentes</span></div></div>
+      </div>
+      <div id="es-form-wrap" class="contact-form">
+        <div class="form-row">
+          <div class="form-group"><label>Nombre</label><input type="text" id="es-fname" placeholder="Juan" /></div>
+          <div class="form-group"><label>Apellido</label><input type="text" id="es-lname" placeholder="García" /></div>
+        </div>
+        <div class="form-row">
+          <div class="form-group"><label>Teléfono</label><input type="tel" id="es-phone" placeholder="(817) 000-0000" /></div>
+          <div class="form-group"><label>Correo Electrónico</label><input type="email" id="es-email" placeholder="juan@correo.com" /></div>
+        </div>
+        <div class="form-group"><label>Servicio Necesario</label>
+          <select id="es-service"><option value="">Selecciona un servicio...</option><option>Construcción de Casa Personalizada</option><option>Techos</option><option>Drenaje y Canaletas</option><option>Cerca de Madera</option><option>Cerca de Metal</option><option>Servicios de Concreto</option><option>Remodelación / ADU</option><option>Restauración por Tormenta</option><option>Construcción Comercial</option><option>Múltiples Servicios</option><option>No Estoy Seguro — Necesito Inspección</option></select>
+        </div>
+        <div class="form-group"><label>Ciudad / Ubicación</label><input type="text" id="es-city" placeholder="Fort Worth, TX" /></div>
+        <div class="form-group"><label>Detalles del Proyecto</label><textarea id="es-notes" placeholder="Describe tu proyecto, el plazo o cualquier pregunta..."></textarea></div>
+        <button class="form-submit" onclick="submitForm('es')">Solicitar Presupuesto Gratis →</button>
+      </div>
+      <div class="form-success" id="es-success"><div class="big">🐸</div><h4>¡Recibimos tu solicitud!</h4><p>Alguien de La Rana se comunicará en un día hábil para programar tu presupuesto gratuito.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- ======== ENGLISH FOOTER ======== -->
+<footer class="lang-en">
+  <span class="footer-frog">🐸</span>
+  <strong>La Rana General Contractors</strong> &nbsp;·&nbsp; Serving All of Texas &nbsp;·&nbsp; Licensed &amp; Insured &nbsp;·&nbsp; Bilingual English &amp; Spanish<br/>
+  (555) 000-0000 &nbsp;·&nbsp; info@laranacontractors.com<br/>
+  Custom Homes · Roofing · Drainage · Fencing · Concrete · Remodeling · Storm Restoration · Commercial
+</footer>
+
+<!-- ======== SPANISH FOOTER ======== -->
+<footer class="lang-es">
+  <span class="footer-frog">🐸</span>
+  <strong>La Rana Contratistas Generales</strong> &nbsp;·&nbsp; Sirviendo Todo Texas &nbsp;·&nbsp; Licenciados y Asegurados &nbsp;·&nbsp; Bilingüe Inglés y Español<br/>
+  (555) 000-0000 &nbsp;·&nbsp; info@laranacontractors.com<br/>
+  Casas Personalizadas · Techos · Drenaje · Cercas · Concreto · Remodelaciones · Restauración · Comercial
+</footer>
+
+<script>
+  function setLang(lang) {
+    if (lang === 'es') {
+      document.body.classList.add('spanish');
+      document.getElementById('btn-en').classList.remove('active');
+      document.getElementById('btn-es').classList.add('active');
+    } else {
+      document.body.classList.remove('spanish');
+      document.getElementById('btn-en').classList.add('active');
+      document.getElementById('btn-es').classList.remove('active');
+    }
+  }
+
+  function showSvc(lang, id, btn) {
+    var tabsId = lang + '-tabs';
+    document.querySelectorAll('#' + tabsId + ' .tab-btn').forEach(function(b){ b.classList.remove('active'); });
+    var prefix = lang + '-';
+    var panels = ['homes','roofing','drainage','fencing','concrete','remodel','storm','commercial'];
+    panels.forEach(function(p){ var el = document.getElementById(prefix + p); if(el) el.classList.remove('active'); });
+    document.getElementById(id).classList.add('active');
+    btn.classList.add('active');
+  }
+
+  function toggleFaq(btn) {
+    var item = btn.parentElement;
+    var wasOpen = item.classList.contains('open');
+    document.querySelectorAll('.faq-item').forEach(function(i){ i.classList.remove('open'); });
+    if (!wasOpen) item.classList.add('open');
+  }
+
+  function submitForm(lang) {
+    var fname = document.getElementById(lang + '-fname').value.trim();
+    var phone = document.getElementById(lang + '-phone').value.trim();
+    var service = document.getElementById(lang + '-service').value;
+    if (!fname || !phone || !service) {
+      alert(lang === 'es' ? 'Por favor completa tu nombre, teléfono y el servicio necesario.' : 'Please fill in your name, phone number, and service needed.');
+      return;
+    }
+    document.getElementById(lang + '-form-wrap').style.display = 'none';
+    document.getElementById(lang + '-success').style.display = 'block';
+  }
+</script>
+</body>
+</html>
