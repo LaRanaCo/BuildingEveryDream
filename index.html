@@ -7,7 +7,7 @@
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Barlow+Condensed:wght@600;700;800&display=swap" rel="stylesheet" />
 <style>
   *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
-  :root{--purple:#4D1979;--purple-dark:#3a1259;--purple-deep:#280d40;--purple-mid:#6b2fa0;--purple-pale:#e8d9f5;--purple-mist:#f4eefb;--grey-light:#e8eaeb;--white:#ffffff;--text:#1a1025;--text-mid:#564d63;--border:#d9ceea;--radius:8px;--radius-lg:12px}
+  :root{--purple:#4D1979;--purple-dark:#3a1259;--purple-deep:#280d40;--purple-mid:#6b2fa0;--purple-pale:#e8d9f5;--purple-mist:#f4eefb;--grey-light:#e8eaeb;--white:#ffffff;--text:#1a1025;--text-mid:#4a4a5c;--border:#ddd9e6;--radius:6px;--radius-lg:12px}
   html{scroll-behavior:smooth}
   body{font-family:'Inter',sans-serif;color:var(--text);background:var(--white);font-size:16px;line-height:1.6}
   .lang-es{display:none}
@@ -17,7 +17,7 @@
   .lang-btn{background:transparent;border:1px solid rgba(255,255,255,.3);color:rgba(255,255,255,.75);padding:.2rem .75rem;border-radius:99px;font-size:.75rem;font-weight:600;cursor:pointer;font-family:'Inter',sans-serif;transition:all .15s}
   .lang-btn:hover{border-color:rgba(255,255,255,.6);color:rgba(255,255,255,.9)}
   .lang-btn.active{background:var(--white);color:var(--purple);border-color:var(--white)}
-  nav{position:sticky;top:0;z-index:100;background:var(--purple);display:flex;align-items:center;justify-content:space-between;padding:0 2rem;height:66px;border-bottom:3px solid rgba(255,255,255,.05)}
+  nav{position:sticky;top:0;z-index:100;background:var(--purple);display:flex;align-items:center;justify-content:space-between;padding:0 2rem;height:66px;border-bottom:3px solid rgba(255,255,255,.15)}
   .nav-logo{display:flex;flex-direction:column;line-height:1.1;text-decoration:none}
   .nav-logo-main{font-family:'Barlow Condensed',sans-serif;font-size:1.65rem;font-weight:800;color:var(--white);letter-spacing:.04em}
   .nav-logo-sub{font-size:.62rem;font-weight:500;color:rgba(255,255,255,.5);letter-spacing:.1em;text-transform:uppercase}
@@ -29,14 +29,14 @@
   .hero::before{content:'';position:absolute;inset:0;background:repeating-linear-gradient(45deg,transparent,transparent 50px,rgba(255,255,255,.02) 50px,rgba(255,255,255,.02) 100px)}
   .hero-frog{font-size:3.5rem;display:block;margin-bottom:1rem;position:relative;animation:bob 3s ease-in-out infinite}
   @keyframes bob{0%,100%{transform:translateY(0)}50%{transform:translateY(-6px)}}
-  .hero-badge{display:inline-block;background:rgba(255,255,255,.13);border:1px solid rgba(255,255,255,.22);color:rgba(255,255,255,.9);font-size:.75rem;font-weight:600;letter-spacing:.1em;text-transform:uppercase;padding:.35rem .7rem;border-radius:99px;margin-bottom:1rem}
+  .hero-badge{display:inline-block;background:rgba(255,255,255,.13);border:1px solid rgba(255,255,255,.22);color:rgba(255,255,255,.9);font-size:.75rem;font-weight:600;letter-spacing:.1em;text-transform:uppercase;padding:.4rem .85rem;border-radius:99px;margin-bottom:.95rem}
   .hero h1{font-family:'Barlow Condensed',sans-serif;font-size:clamp(2.75rem,7vw,5rem);font-weight:800;line-height:1;margin-bottom:.5rem;position:relative}
   .hero h1 em{color:rgba(255,255,255,.5);font-style:normal;font-size:.52em;display:block;letter-spacing:.06em;font-weight:600}
   .hero-sub{font-size:1.1rem;color:rgba(255,255,255,.68);max-width:520px;margin:1rem auto 2rem;position:relative}
   .hero-btns{display:flex;gap:1rem;justify-content:center;flex-wrap:wrap;position:relative}
-  .btn-primary{background:var(--white);color:var(--purple);border:none;padding:.8rem 1.75rem;border-radius:var(--radius);font-size:1rem;font-weight:700;cursor:pointer;text-decoration:none;display:inline-block;transition:all .15s}
+  .btn-primary{background:var(--white);color:var(--purple);border:none;padding:.8rem 1.75rem;border-radius:var(--radius);font-size:1rem;font-weight:700;cursor:pointer;text-decoration:none;display:inline-block;transition:all .2s}
   .btn-primary:hover{background:var(--purple-pale);transform:translateY(-1px)}
-  .btn-outline{background:transparent;color:var(--white);border:1.5px solid rgba(255,255,255,.42);padding:.8rem 1.75rem;border-radius:var(--radius);font-size:1rem;font-weight:500;cursor:pointer;text-decoration:none;display:inline-block;transition:all .15s}
+  .btn-outline{background:transparent;color:var(--white);border:1.5px solid rgba(255,255,255,.42);padding:.8rem 1.75rem;border-radius:var(--radius);font-size:1rem;font-weight:500;cursor:pointer;text-decoration:none;display:inline-block;transition:all .2s}
   .btn-outline:hover{border-color:rgba(255,255,255,.9);background:rgba(255,255,255,.07)}
   .hero-stats{display:flex;justify-content:center;gap:3rem;margin-top:3.5rem;padding-top:2.5rem;border-top:1px solid rgba(255,255,255,.14);position:relative;flex-wrap:wrap}
   .hero-stat-num{font-family:'Barlow Condensed',sans-serif;font-size:2.25rem;font-weight:800;color:var(--white);display:block;line-height:1}
@@ -67,6 +67,10 @@
   .service-visual-tag p{color:rgba(255,255,255,.6);font-size:.8rem;margin:0}
   .service-tip{background:var(--purple-pale);border-left:3px solid var(--purple);border-radius:0 var(--radius) var(--radius) 0;padding:.85rem 1rem;font-size:.875rem;color:var(--purple-dark);margin-top:1rem}
   .service-tip strong{display:block;margin-bottom:.2rem;font-weight:700;color:var(--purple)}
+  .portfolio-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:1.5rem;margin:2.5rem 0}
+  .portfolio-item{border-radius:var(--radius-lg);overflow:hidden;aspect-ratio:4/3;background:var(--grey-light);cursor:pointer;transition:transform .2s,box-shadow .2s;position:relative;box-shadow:0 2px 8px rgba(0,0,0,.1)}
+  .portfolio-item:hover{transform:translateY(-4px);box-shadow:0 6px 16px rgba(0,0,0,.15)}
+  .portfolio-item img{width:100%;height:100%;object-fit:cover;display:block}
   .process-steps{display:grid;grid-template-columns:repeat(auto-fit,minmax(185px,1fr));gap:1.25rem}
   .process-step{background:var(--purple-mist);border-radius:var(--radius-lg);padding:1.4rem;border:1.5px solid var(--border)}
   .step-num{font-family:'Barlow Condensed',sans-serif;font-size:.72rem;font-weight:700;letter-spacing:.1em;color:var(--purple-mid);text-transform:uppercase;margin-bottom:.4rem}
@@ -82,9 +86,9 @@
   .faq-section{background:var(--purple-mist);padding:5rem 2rem}
   .faq-list{max-width:740px}
   .faq-item{border:1.5px solid var(--border);border-radius:var(--radius-lg);margin-bottom:.75rem;overflow:hidden;background:var(--white)}
-  .faq-q{width:100%;background:none;border:none;padding:1.1rem 1.25rem;text-align:left;font-family:'Inter',sans-serif;font-size:.95rem;font-weight:600;color:var(--purple-deep);cursor:pointer;display:flex;justify-content:space-between;align-items:center;transition:background .15s}
+  .faq-q{width:100%;background:none;border:none;padding:1.1rem 1.25rem;text-align:left;font-family:'Inter',sans-serif;font-size:.95rem;font-weight:600;color:var(--purple-deep);cursor:pointer;display:flex;justify-content:space-between;align-items:center}
   .faq-q:hover{background:var(--purple-mist)}
-  .faq-arrow{width:22px;height:22px;border-radius:50%;background:var(--grey-light);display:flex;align-items:center;justify-content:center;flex-shrink:0;transition:transform .2s,background .15s;font-size:.7rem;color:var(--text-mid)}
+  .faq-arrow{width:22px;height:22px;border-radius:50%;background:var(--grey-light);display:flex;align-items:center;justify-content:center;flex-shrink:0;transition:transform .2s,background .15s;font-size:.7rem}
   .faq-item.open .faq-arrow{transform:rotate(180deg);background:var(--purple);color:var(--white)}
   .faq-a{display:none;padding:0 1.25rem 1.1rem;font-size:.9rem;color:var(--text-mid);line-height:1.7;border-top:1px solid var(--border)}
   .faq-item.open .faq-a{display:block}
@@ -101,10 +105,10 @@
   .form-row{display:grid;grid-template-columns:1fr 1fr;gap:1rem}
   .form-group{margin-bottom:1rem}
   .form-group label{display:block;font-size:.78rem;font-weight:700;color:var(--purple-deep);margin-bottom:.4rem;text-transform:uppercase;letter-spacing:.06em}
-  .form-group input,.form-group select,.form-group textarea{width:100%;padding:.65rem .85rem;border:1.5px solid var(--border);border-radius:var(--radius);font-family:'Inter',sans-serif;font-size:.9rem;color:var(--text);transition:border .15s}
+  .form-group input,.form-group select,.form-group textarea{width:100%;padding:.65rem .85rem;border:1.5px solid var(--border);border-radius:var(--radius);font-family:'Inter',sans-serif;font-size:.9rem}
   .form-group input:focus,.form-group select:focus,.form-group textarea:focus{border-color:var(--purple);outline:none}
   .form-group textarea{resize:vertical;min-height:95px}
-  .form-submit{width:100%;background:var(--purple);color:var(--white);border:none;padding:.9rem;border-radius:var(--radius);font-family:'Inter',sans-serif;font-size:1rem;font-weight:700;cursor:pointer;transition:background .15s}
+  .form-submit{width:100%;background:var(--purple);color:var(--white);border:none;padding:.9rem;border-radius:var(--radius);font-family:'Inter',sans-serif;font-size:1rem;font-weight:700;cursor:pointer;transition:background .2s}
   .form-submit:hover{background:var(--purple-dark)}
   .form-success{display:none;text-align:center;padding:2.5rem 1rem;grid-column:2}
   .form-success .big{font-size:2.5rem;margin-bottom:.75rem}
@@ -113,7 +117,7 @@
   footer{background:var(--purple-deep);color:rgba(255,255,255,.45);text-align:center;padding:2rem;font-size:.82rem;border-top:3px solid var(--purple-mid)}
   footer strong{color:var(--white)}
   .footer-frog{font-size:1.5rem;display:block;margin-bottom:.5rem}
-  @media(max-width:720px){.service-panel.active{grid-template-columns:1fr}.contact-grid{grid-template-columns:1fr}.form-row{grid-template-columns:1fr}.nav-links{display:none}.hero{padding:3.5rem 1rem 2.5rem}.hero h1{font-size:clamp(1.75rem,5vw,2.75rem)}}
+  @media(max-width:720px){.service-panel.active{grid-template-columns:1fr}.contact-grid{grid-template-columns:1fr}.form-row{grid-template-columns:1fr}.nav-links{display:none}.hero{padding:3.5rem 2rem 2.5rem}.portfolio-grid{grid-template-columns:1fr}}
 </style>
 </head>
 <body>
@@ -127,7 +131,7 @@
 <nav class="lang-en">
   <a class="nav-logo" href="#"><span class="nav-logo-main">🏗️ BUILDING EVERY DREAM</span><span class="nav-logo-sub">Construction &amp; Services</span></a>
   <ul class="nav-links">
-    <li><a href="#services">Services</a></li><li><a href="#process">Our Process</a></li>
+    <li><a href="#services">Services</a></li><li><a href="#portfolio">Portfolio</a></li><li><a href="#process">Our Process</a></li>
     <li><a href="#why">Why Us</a></li><li><a href="#faq">FAQ</a></li>
     <li><a href="#contact" class="nav-cta">Get Started</a></li>
   </ul>
@@ -137,7 +141,7 @@
 <nav class="lang-es">
   <a class="nav-logo" href="#"><span class="nav-logo-main">🏗️ CONSTRUYENDO CADA SUEÑO</span><span class="nav-logo-sub">Construcción y Servicios</span></a>
   <ul class="nav-links">
-    <li><a href="#services-es">Servicios</a></li><li><a href="#process-es">Proceso</a></li>
+    <li><a href="#services-es">Servicios</a></li><li><a href="#portfolio-es">Portafolio</a></li><li><a href="#process-es">Proceso</a></li>
     <li><a href="#why-es">Por Qué Nosotros</a></li><li><a href="#faq-es">Preguntas</a></li>
     <li><a href="#contact-es" class="nav-cta">Comenzar</a></li>
   </ul>
@@ -195,39 +199,39 @@
     </div>
     <div class="service-panel active" id="en-consulting">
       <div class="service-info"><h3>Professional Consulting</h3><p>Expert guidance for your construction project from start to finish. We help you plan, budget, and execute with confidence.</p>
-      <ul class="service-features"><li><span class="check"></span>Comprehensive project planning</li><li><span class="check"></span>Budget optimization</li><li><span class="check"></span>Timeline development</li><li><span class="check"></span>Resource allocation</li></ul>
+      <ul class="service-features"><li><span class="check"></span>Comprehensive project planning</li><li><span class="check"></span>Budget optimization</li><li><span class="check"></span>Timeline management</li><li><span class="check"></span>Risk mitigation</li></ul>
       <div class="service-tip"><strong>Pro Tip</strong>Proper planning saves up to 30% on project costs. Let us help you plan right from the beginning.</div></div>
-      <div class="service-visual" style="background:linear-gradient(155deg,#3a1259,#6b2fa0)"><div class="service-visual-icon">📋</div><div class="service-visual-tag"><h4>Smart Planning, Better Results</h4><p>We guide every decision</p></div></div>
+      <div class="service-visual" style="background:linear-gradient(155deg,#3a1259,#6b2fa0)"><div class="service-visual-icon">📋</div><div class="service-visual-tag"><h4>Smart Planning, Better Results</h4><p>Strategic guidance that maximizes your investment</p></div></div>
     </div>
     <div class="service-panel" id="en-design">
       <div class="service-info"><h3>Design Services</h3><p>Beautiful and functional designs that meet your needs and exceed your expectations. Our design team creates spaces that inspire.</p>
-      <ul class="service-features"><li><span class="check"></span>Architectural design</li><li><span class="check"></span>Interior planning</li><li><span class="check"></span>3D visualization</li><li><span class="check"></span>Material selection</li></ul>
+      <ul class="service-features"><li><span class="check"></span>Architectural design</li><li><span class="check"></span>Interior planning</li><li><span class="check"></span>3D visualization</li><li><span class="check"></span>Technical drawings</li></ul>
       <div class="service-tip"><strong>Design Insight</strong>Great design balances aesthetics with functionality. We create spaces that look amazing and work perfectly.</div></div>
-      <div class="service-visual" style="background:linear-gradient(155deg,#280d40,#4D1979)"><div class="service-visual-icon">🎨</div><div class="service-visual-tag"><h4>Vision to Blueprint</h4><p>From ideas to detailed plans</p></div></div>
+      <div class="service-visual" style="background:linear-gradient(155deg,#280d40,#4D1979)"><div class="service-visual-icon">🎨</div><div class="service-visual-tag"><h4>Vision to Blueprint</h4><p>Transforming ideas into stunning designs</p></div></div>
     </div>
     <div class="service-panel" id="en-construction">
       <div class="service-info"><h3>Construction Services</h3><p>Full-scale construction execution with skilled tradespeople and quality control at every stage. We build things right.</p>
       <ul class="service-features"><li><span class="check"></span>General contracting</li><li><span class="check"></span>Foundation work</li><li><span class="check"></span>Structural framing</li><li><span class="check"></span>Quality assurance</li></ul>
       <div class="service-tip"><strong>Build Quality</strong>We maintain the highest standards throughout construction, ensuring your project is built to last.</div></div>
-      <div class="service-visual" style="background:linear-gradient(155deg,#1a3040,#4D1979)"><div class="service-visual-icon">🏗️</div><div class="service-visual-tag"><h4>Built Right, Built Strong</h4><p>Quality craftsmanship guaranteed</p></div></div>
+      <div class="service-visual" style="background:linear-gradient(155deg,#1a3040,#4D1979)"><div class="service-visual-icon">🏗️</div><div class="service-visual-tag"><h4>Built Right, Built Strong</h4><p>Professional execution from start to finish</p></div></div>
     </div>
     <div class="service-panel" id="en-renovation">
       <div class="service-info"><h3>Renovation &amp; Remodeling</h3><p>Transform existing spaces into something new and beautiful. From kitchens to complete home renovations, we handle it all.</p>
-      <ul class="service-features"><li><span class="check"></span>Bathroom remodels</li><li><span class="check"></span>Kitchen upgrades</li><li><span class="check"></span>Room additions</li><li><span class="check"></span>Full home renovation</li></ul>
+      <ul class="service-features"><li><span class="check"></span>Bathroom remodels</li><li><span class="check"></span>Kitchen upgrades</li><li><span class="check"></span>Room additions</li><li><span class="check"></span>Full home renovations</li></ul>
       <div class="service-tip"><strong>Renovation Value</strong>A well-executed renovation adds significant value to your property and improves quality of life.</div></div>
-      <div class="service-visual" style="background:linear-gradient(155deg,#2a1259,#5a2090)"><div class="service-visual-icon">🔨</div><div class="service-visual-tag"><h4>Transform Your Space</h4><p>Fresh look, renewed purpose</p></div></div>
+      <div class="service-visual" style="background:linear-gradient(155deg,#2a1259,#5a2090)"><div class="service-visual-icon">🔨</div><div class="service-visual-tag"><h4>Transform Your Space</h4><p>Reimagine your home or business</p></div></div>
     </div>
     <div class="service-panel" id="en-maintenance">
       <div class="service-info"><h3>Maintenance &amp; Repairs</h3><p>Keep your property in top condition with our maintenance and repair services. We respond quickly to any issue.</p>
-      <ul class="service-features"><li><span class="check"></span>Emergency repairs</li><li><span class="check"></span>Preventive maintenance</li><li><span class="check"></span>System upgrades</li><li><span class="check"></span>Regular inspections</li></ul>
+      <ul class="service-features"><li><span class="check"></span>Emergency repairs</li><li><span class="check"></span>Preventive maintenance</li><li><span class="check"></span>System upgrades</li><li><span class="check"></span>Ongoing support</li></ul>
       <div class="service-tip"><strong>Maintenance Matters</strong>Regular maintenance prevents costly repairs down the road and extends the life of your property.</div></div>
-      <div class="service-visual" style="background:linear-gradient(155deg,#1f1525,#4D1979)"><div class="service-visual-icon">⚙️</div><div class="service-visual-tag"><h4>Always Ready to Help</h4><p>Maintenance and repairs</p></div></div>
+      <div class="service-visual" style="background:linear-gradient(155deg,#1f1525,#4D1979)"><div class="service-visual-icon">⚙️</div><div class="service-visual-tag"><h4>Always Ready to Help</h4><p>Responsive service when you need it most</p></div></div>
     </div>
     <div class="service-panel" id="en-consulting2">
       <div class="service-info"><h3>Project Management</h3><p>Comprehensive project oversight ensuring timely delivery, budget adherence, and quality standards throughout your project.</p>
-      <ul class="service-features"><li><span class="check"></span>Schedule management</li><li><span class="check"></span>Budget tracking</li><li><span class="check"></span>Vendor coordination</li><li><span class="check"></span>Progress reporting</li></ul>
+      <ul class="service-features"><li><span class="check"></span>Schedule management</li><li><span class="check"></span>Budget tracking</li><li><span class="check"></span>Vendor coordination</li><li><span class="check"></span>Quality oversight</li></ul>
       <div class="service-tip"><strong>Management Excellence</strong>Expert project management keeps everything on track and everyone informed every step of the way.</div></div>
-      <div class="service-visual" style="background:linear-gradient(155deg,#0d0020,#4D1979)"><div class="service-visual-icon">📊</div><div class="service-visual-tag"><h4>Control &amp; Oversight</h4><p>Professional project management</p></div></div>
+      <div class="service-visual" style="background:linear-gradient(155deg,#0d0020,#4D1979)"><div class="service-visual-icon">📊</div><div class="service-visual-tag"><h4>Control &amp; Oversight</h4><p>Complete visibility and accountability</p></div></div>
     </div>
   </div>
 </section>
@@ -248,39 +252,79 @@
     </div>
     <div class="service-panel active" id="es-consulting">
       <div class="service-info"><h3>Consultoría Profesional</h3><p>Orientación experta para tu proyecto de construcción de principio a fin. Te ayudamos a planificar, presupuestar y ejecutar con confianza.</p>
-      <ul class="service-features"><li><span class="check"></span>Planificación integral del proyecto</li><li><span class="check"></span>Optimización del presupuesto</li><li><span class="check"></span>Desarrollo del cronograma</li><li><span class="check"></span>Asignación de recursos</li></ul>
+      <ul class="service-features"><li><span class="check"></span>Planificación integral del proyecto</li><li><span class="check"></span>Optimización del presupuesto</li><li><span class="check"></span>Gestión del cronograma</li><li><span class="check"></span>Mitigación de riesgos</li></ul>
       <div class="service-tip"><strong>Consejo Profesional</strong>La planificación adecuada ahorra hasta el 30% en costos del proyecto. Déjanos ayudarte a planificar desde el principio.</div></div>
-      <div class="service-visual" style="background:linear-gradient(155deg,#3a1259,#6b2fa0)"><div class="service-visual-icon">📋</div><div class="service-visual-tag"><h4>Planificación Inteligente</h4><p>Mejores resultados asegurados</p></div></div>
+      <div class="service-visual" style="background:linear-gradient(155deg,#3a1259,#6b2fa0)"><div class="service-visual-icon">📋</div><div class="service-visual-tag"><h4>Planificación Inteligente</h4><p>Orientación estratégica que maximiza tu inversión</p></div></div>
     </div>
     <div class="service-panel" id="es-design">
       <div class="service-info"><h3>Servicios de Diseño</h3><p>Diseños hermosos y funcionales que satisfacen tus necesidades y superan tus expectativas. Nuestro equipo crea espacios que inspiran.</p>
-      <ul class="service-features"><li><span class="check"></span>Diseño arquitectónico</li><li><span class="check"></span>Planificación de interiores</li><li><span class="check"></span>Visualización 3D</li><li><span class="check"></span>Selección de materiales</li></ul>
+      <ul class="service-features"><li><span class="check"></span>Diseño arquitectónico</li><li><span class="check"></span>Planificación de interiores</li><li><span class="check"></span>Visualización 3D</li><li><span class="check"></span>Planos técnicos</li></ul>
       <div class="service-tip"><strong>Perspectiva de Diseño</strong>El buen diseño equilibra la estética con la funcionalidad. Creamos espacios que se ven increíbles y funcionan perfectamente.</div></div>
-      <div class="service-visual" style="background:linear-gradient(155deg,#280d40,#4D1979)"><div class="service-visual-icon">🎨</div><div class="service-visual-tag"><h4>De la Visión al Plano</h4><p>De ideas a planes detallados</p></div></div>
+      <div class="service-visual" style="background:linear-gradient(155deg,#280d40,#4D1979)"><div class="service-visual-icon">🎨</div><div class="service-visual-tag"><h4>De la Visión al Plano</h4><p>Transformando ideas en diseños hermosos</p></div></div>
     </div>
     <div class="service-panel" id="es-construction">
       <div class="service-info"><h3>Servicios de Construcción</h3><p>Ejecución de construcción a gran escala con trabajadores especializados y control de calidad en cada etapa. Construimos bien.</p>
       <ul class="service-features"><li><span class="check"></span>Contratación general</li><li><span class="check"></span>Trabajo de cimentación</li><li><span class="check"></span>Encuadre estructural</li><li><span class="check"></span>Aseguramiento de calidad</li></ul>
       <div class="service-tip"><strong>Construcción de Calidad</strong>Mantenemos los más altos estándares durante la construcción, asegurando que tu proyecto esté construido para durar.</div></div>
-      <div class="service-visual" style="background:linear-gradient(155deg,#1a3040,#4D1979)"><div class="service-visual-icon">🏗️</div><div class="service-visual-tag"><h4>Construido Bien y Fuerte</h4><p>Artesanía de calidad garantizada</p></div></div>
+      <div class="service-visual" style="background:linear-gradient(155deg,#1a3040,#4D1979)"><div class="service-visual-icon">🏗️</div><div class="service-visual-tag"><h4>Construido Bien y Fuerte</h4><p>Ejecución profesional de principio a fin</p></div></div>
     </div>
     <div class="service-panel" id="es-renovation">
       <div class="service-info"><h3>Renovación y Remodelación</h3><p>Transforma espacios existentes en algo nuevo y hermoso. Desde cocinas hasta renovaciones completas de hogar, manejamos todo.</p>
-      <ul class="service-features"><li><span class="check"></span>Remodelación de baños</li><li><span class="check"></span>Mejoras de cocina</li><li><span class="check"></span>Adiciones de cuartos</li><li><span class="check"></span>Renovación completa del hogar</li></ul>
+      <ul class="service-features"><li><span class="check"></span>Remodelación de baños</li><li><span class="check"></span>Mejoras de cocina</li><li><span class="check"></span>Adiciones de cuartos</li><li><span class="check"></span>Renovaciones completas del hogar</li></ul>
       <div class="service-tip"><strong>Valor de Renovación</strong>Una renovación bien ejecutada agrega valor significativo a tu propiedad y mejora la calidad de vida.</div></div>
-      <div class="service-visual" style="background:linear-gradient(155deg,#2a1259,#5a2090)"><div class="service-visual-icon">🔨</div><div class="service-visual-tag"><h4>Transforma Tu Espacio</h4><p>Nuevo look, nuevo propósito</p></div></div>
+      <div class="service-visual" style="background:linear-gradient(155deg,#2a1259,#5a2090)"><div class="service-visual-icon">🔨</div><div class="service-visual-tag"><h4>Transforma Tu Espacio</h4><p>Reimagina tu hogar o negocio</p></div></div>
     </div>
     <div class="service-panel" id="es-maintenance">
       <div class="service-info"><h3>Mantenimiento y Reparaciones</h3><p>Mantén tu propiedad en óptimas condiciones con nuestros servicios de mantenimiento y reparación. Respondemos rápidamente a cualquier problema.</p>
-      <ul class="service-features"><li><span class="check"></span>Reparaciones de emergencia</li><li><span class="check"></span>Mantenimiento preventivo</li><li><span class="check"></span>Mejoras del sistema</li><li><span class="check"></span>Inspecciones regulares</li></ul>
+      <ul class="service-features"><li><span class="check"></span>Reparaciones de emergencia</li><li><span class="check"></span>Mantenimiento preventivo</li><li><span class="check"></span>Mejoras de sistemas</li><li><span class="check"></span>Apoyo continuo</li></ul>
       <div class="service-tip"><strong>La Importancia del Mantenimiento</strong>El mantenimiento regular previene reparaciones costosas en el futuro y extiende la vida útil de tu propiedad.</div></div>
-      <div class="service-visual" style="background:linear-gradient(155deg,#1f1525,#4D1979)"><div class="service-visual-icon">⚙️</div><div class="service-visual-tag"><h4>Siempre Listos para Ayudar</h4><p>Mantenimiento y reparaciones</p></div></div>
+      <div class="service-visual" style="background:linear-gradient(155deg,#1f1525,#4D1979)"><div class="service-visual-icon">⚙️</div><div class="service-visual-tag"><h4>Siempre Listos para Ayudar</h4><p>Servicio responsivo cuando más lo necesitas</p></div></div>
     </div>
     <div class="service-panel" id="es-consulting2">
       <div class="service-info"><h3>Administración de Proyectos</h3><p>Supervisión integral del proyecto asegurando entrega oportuna, adherencia al presupuesto y estándares de calidad en todo tu proyecto.</p>
-      <ul class="service-features"><li><span class="check"></span>Gestión del cronograma</li><li><span class="check"></span>Seguimiento del presupuesto</li><li><span class="check"></span>Coordinación de proveedores</li><li><span class="check"></span>Informes de progreso</li></ul>
+      <ul class="service-features"><li><span class="check"></span>Gestión del cronograma</li><li><span class="check"></span>Seguimiento del presupuesto</li><li><span class="check"></span>Coordinación de proveedores</li><li><span class="check"></span>Supervisión de calidad</li></ul>
       <div class="service-tip"><strong>Excelencia en la Administración</strong>La gestión experta de proyectos mantiene todo en orden y a todos informados en cada paso del camino.</div></div>
-      <div class="service-visual" style="background:linear-gradient(155deg,#0d0020,#4D1979)"><div class="service-visual-icon">📊</div><div class="service-visual-tag"><h4>Control y Supervisión</h4><p>Administración profesional de proyectos</p></div></div>
+      <div class="service-visual" style="background:linear-gradient(155deg,#0d0020,#4D1979)"><div class="service-visual-icon">📊</div><div class="service-visual-tag"><h4>Control y Supervisión</h4><p>Visibilidad completa y responsabilidad</p></div></div>
+    </div>
+  </div>
+</section>
+
+<!-- ======== ENGLISH PORTFOLIO ======== -->
+<section id="portfolio" class="lang-en">
+  <div class="container">
+    <div class="section-label">Our Work</div>
+    <h2 class="section-title">Recent Projects</h2>
+    <p class="section-sub">Beautiful homes and spaces brought to life with quality craftsmanship and attention to detail.</p>
+    <div class="portfolio-grid">
+      <div class="portfolio-item">
+        <img src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?w=600&h=450&fit=crop" alt="Luxury home with pool and modern patio design">
+      </div>
+      <div class="portfolio-item">
+        <img src="https://images.unsplash.com/photo-1600607687939-ce8a6c25b6b4?w=600&h=450&fit=crop" alt="Modern white home with metal roof and landscaping">
+      </div>
+      <div class="portfolio-item">
+        <img src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?w=600&h=450&fit=crop" alt="Contemporary home exterior at sunset with lighting">
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ======== SPANISH PORTFOLIO ======== -->
+<section id="portfolio-es" class="lang-es">
+  <div class="container">
+    <div class="section-label">Nuestro Trabajo</div>
+    <h2 class="section-title">Proyectos Recientes</h2>
+    <p class="section-sub">Hogares hermosos y espacios creados con artesanía de calidad y atención al detalle.</p>
+    <div class="portfolio-grid">
+      <div class="portfolio-item">
+        <img src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?w=600&h=450&fit=crop" alt="Casa de lujo con piscina y diseño de patio moderno">
+      </div>
+      <div class="portfolio-item">
+        <img src="https://images.unsplash.com/photo-1600607687939-ce8a6c25b6b4?w=600&h=450&fit=crop" alt="Casa moderna blanca con techo de metal y paisajismo">
+      </div>
+      <div class="portfolio-item">
+        <img src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?w=600&h=450&fit=crop" alt="Exterior de casa contemporánea al atardecer con iluminación">
+      </div>
     </div>
   </div>
 </section>
@@ -293,7 +337,7 @@
     <p class="section-sub">Clear steps from start to finish. We keep you informed and involved at every stage.</p>
     <div class="process-steps">
       <div class="process-step"><div class="step-num">Step 01</div><h4>Initial Consultation</h4><p>We meet with you to understand your vision, needs, and goals. This conversation shapes the entire project.</p></div>
-      <div class="process-step"><div class="step-num">Step 02</div><h4>Planning &amp; Design</h4><p>Our team develops detailed plans and designs based on your requirements. We show you everything before we start.</p></div>
+      <div class="process-step"><div class="step-num">Step 02</div><h4>Planning &amp; Design</h4><p>Our team develops detailed plans and designs based on your requirements. We show you everything upfront.</p></div>
       <div class="process-step"><div class="step-num">Step 03</div><h4>Budget &amp; Timeline</h4><p>We provide clear budgets and realistic timelines. You know exactly what to expect and when to expect it.</p></div>
       <div class="process-step"><div class="step-num">Step 04</div><h4>Execution</h4><p>Our skilled team executes the project with precision and care. Quality is our priority on every single day.</p></div>
       <div class="process-step"><div class="step-num">Step 05</div><h4>Final Review</h4><p>We walk through the finished project together. Your satisfaction is the measure of our success.</p></div>
@@ -309,9 +353,9 @@
     <p class="section-sub">Pasos claros de principio a fin. Te mantenemos informado e involucrado en cada etapa.</p>
     <div class="process-steps">
       <div class="process-step"><div class="step-num">Paso 01</div><h4>Consulta Inicial</h4><p>Nos reunimos contigo para comprender tu visión, necesidades y objetivos. Esta conversación da forma a todo el proyecto.</p></div>
-      <div class="process-step"><div class="step-num">Paso 02</div><h4>Planificación y Diseño</h4><p>Nuestro equipo desarrolla planes y diseños detallados basados en tus requisitos. Te mostramos todo antes de comenzar.</p></div>
-      <div class="process-step"><div class="step-num">Paso 03</div><h4>Presupuesto y Cronograma</h4><p>Proporcionamos presupuestos claros y cronogramas realistas. Sabes exactamente qué esperar y cuándo esperarlo.</p></div>
-      <div class="process-step"><div class="step-num">Paso 04</div><h4>Ejecución</h4><p>Nuestro equipo especializado ejecuta el proyecto con precisión y cuidado. La calidad es nuestra prioridad todos los días.</p></div>
+      <div class="process-step"><div class="step-num">Paso 02</div><h4>Planificación y Diseño</h4><p>Nuestro equipo desarrolla planes y diseños detallados basados en tus requisitos. Te mostramos todo por adelantado.</p></div>
+      <div class="process-step"><div class="step-num">Paso 03</div><h4>Presupuesto y Cronograma</h4><p>Proporcionamos presupuestos claros y cronogramas realistas. Sabes exactamente qué esperar y cuándo.</p></div>
+      <div class="process-step"><div class="step-num">Paso 04</div><h4>Ejecución</h4><p>Nuestro equipo especializado ejecuta el proyecto con precisión y cuidado. La calidad es nuestra prioridad en cada día.</p></div>
       <div class="process-step"><div class="step-num">Paso 05</div><h4>Revisión Final</h4><p>Recorremos el proyecto terminado juntos. Tu satisfacción es la medida de nuestro éxito.</p></div>
     </div>
   </div>
@@ -342,7 +386,7 @@
     <p class="section-sub" style="color:rgba(255,255,255,.6)">Experiencia, dedicación y un compromiso inquebrantable con la excelencia en todo lo que hacemos.</p>
     <div class="why-grid">
       <div class="why-card"><div class="why-icon">✓</div><h4>Licenciados y Asegurados</h4><p>Estamos completamente licenciados y asegurados, dándote tranquilidad en cada proyecto que realizamos.</p></div>
-      <div class="why-card"><div class="why-icon">🤝</div><h4>Equipo Dedicado</h4><p>Nuestros profesionales especializados están comprometidos a entregar excelencia y construir relaciones duraderas con los clientes.</p></div>
+      <div class="why-card"><div class="why-icon">🤝</div><h4>Equipo Dedicado</h4><p>Nuestros profesionales especializados están comprometidos a entregar excelencia y construir relaciones duraderas.</p></div>
       <div class="why-card"><div class="why-icon">📋</div><h4>Comunicación Clara</h4><p>Mantenemos comunicación transparente durante todo tu proyecto. Nunca te dejaremos sin saber qué está pasando.</p></div>
       <div class="why-card"><div class="why-icon">💰</div><h4>Precios Justos</h4><p>Tarifas competitivas sin comprometer la calidad. Obtienes el mejor valor para tu inversión.</p></div>
       <div class="why-card"><div class="why-icon">⏱️</div><h4>Entrega a Tiempo</h4><p>Respetamos tu tiempo y entregamos proyectos según lo programado. Los retrasos son raros y comunicados inmediatamente.</p></div>
@@ -358,12 +402,12 @@
     <h2 class="section-title">FAQ</h2>
     <p class="section-sub">Answers to the questions we hear most often from clients.</p>
     <div class="faq-list">
-      <div class="faq-item"><button class="faq-q" onclick="toggleFaq(this)">What areas do you service?<span class="faq-arrow">▼</span></button><div class="faq-a">We proudly serve the entire region with expert construction and renovation services for both residential and commercial projects.</div></div>
-      <div class="faq-item"><button class="faq-q" onclick="toggleFaq(this)">How long does a typical project take?<span class="faq-arrow">▼</span></button><div class="faq-a">Project timelines vary based on scope and complexity. We provide detailed schedules during the planning phase, and we're committed to meeting those deadlines.</div></div>
-      <div class="faq-item"><button class="faq-q" onclick="toggleFaq(this)">Do you offer financing options?<span class="faq-arrow">▼</span></button><div class="faq-a">We work with clients on various payment arrangements and can discuss financing options. Contact us to explore what works best for your situation.</div></div>
-      <div class="faq-item"><button class="faq-q" onclick="toggleFaq(this)">Are you licensed and insured?<span class="faq-arrow">▼</span></button><div class="faq-a">Yes, we are fully licensed and insured. All our team members carry proper certifications and insurance coverage for your protection.</div></div>
-      <div class="faq-item"><button class="faq-q" onclick="toggleFaq(this)">Can you help with emergency repairs?<span class="faq-arrow">▼</span></button><div class="faq-a">Absolutely. We respond quickly to emergency situations and can often accommodate urgent repair needs with priority scheduling.</div></div>
-      <div class="faq-item"><button class="faq-q" onclick="toggleFaq(this)">Do you warranty your work?<span class="faq-arrow">▼</span></button><div class="faq-a">We stand behind all our work with a comprehensive warranty. Your satisfaction is our commitment, and we're here to support you after project completion.</div></div>
+      <div class="faq-item"><button class="faq-q" onclick="toggleFaq(this)">What areas do you service?<span class="faq-arrow">▼</span></button><div class="faq-a">We proudly serve DFW, Austin, and surrounding areas throughout Texas with expert construction services and full project support.</div></div>
+      <div class="faq-item"><button class="faq-q" onclick="toggleFaq(this)">How long does a typical project take?<span class="faq-arrow">▼</span></button><div class="faq-a">Project timelines vary based on scope and complexity. We provide detailed schedules upfront so you always know when to expect completion.</div></div>
+      <div class="faq-item"><button class="faq-q" onclick="toggleFaq(this)">Do you offer financing options?<span class="faq-arrow">▼</span></button><div class="faq-a">We work with clients on various payment structures. Contact us to discuss options that work best for your budget and project.</div></div>
+      <div class="faq-item"><button class="faq-q" onclick="toggleFaq(this)">Are you licensed and insured?<span class="faq-arrow">▼</span></button><div class="faq-a">Yes, we are fully licensed and insured. All work is backed by comprehensive coverage protecting you from start to finish.</div></div>
+      <div class="faq-item"><button class="faq-q" onclick="toggleFaq(this)">Can you help with emergency repairs?<span class="faq-arrow">▼</span></button><div class="faq-a">Absolutely. We respond quickly to emergency situations and have availability for urgent repairs whenever you need us.</div></div>
+      <div class="faq-item"><button class="faq-q" onclick="toggleFaq(this)">Do you warranty your work?<span class="faq-arrow">▼</span></button><div class="faq-a">We stand behind all our work with a comprehensive warranty. Your satisfaction and peace of mind are guaranteed.</div></div>
     </div>
   </div>
 </section>
@@ -375,12 +419,12 @@
     <h2 class="section-title">Preguntas y Respuestas</h2>
     <p class="section-sub">Respuestas a las preguntas que más escuchamos de nuestros clientes.</p>
     <div class="faq-list">
-      <div class="faq-item"><button class="faq-q" onclick="toggleFaq(this)">¿Qué áreas atienden?<span class="faq-arrow">▼</span></button><div class="faq-a">Con orgullo servimos toda la región con servicios expertos de construcción y renovación para proyectos residenciales y comerciales.</div></div>
-      <div class="faq-item"><button class="faq-q" onclick="toggleFaq(this)">¿Cuánto tiempo tarda un proyecto típico?<span class="faq-arrow">▼</span></button><div class="faq-a">Los plazos del proyecto varían según el alcance y la complejidad. Proporcionamos cronogramas detallados durante la fase de planificación, y estamos comprometidos a cumplir esos plazos.</div></div>
-      <div class="faq-item"><button class="faq-q" onclick="toggleFaq(this)">¿Ofrecen opciones de financiamiento?<span class="faq-arrow">▼</span></button><div class="faq-a">Trabajamos con clientes en varios arreglos de pago y podemos discutir opciones de financiamiento. Contáctanos para explorar qué funciona mejor para ti.</div></div>
-      <div class="faq-item"><button class="faq-q" onclick="toggleFaq(this)">¿Están licenciados y asegurados?<span class="faq-arrow">▼</span></button><div class="faq-a">Sí, estamos completamente licenciados y asegurados. Todos los miembros de nuestro equipo tienen certificaciones apropiadas y cobertura de seguro para tu protección.</div></div>
-      <div class="faq-item"><button class="faq-q" onclick="toggleFaq(this)">¿Pueden ayudar con reparaciones de emergencia?<span class="faq-arrow">▼</span></button><div class="faq-a">Absolutamente. Respondemos rápidamente a situaciones de emergencia y a menudo podemos acomodar necesidades de reparación urgentes con programación prioritaria.</div></div>
-      <div class="faq-item"><button class="faq-q" onclick="toggleFaq(this)">¿Garantizan su trabajo?<span class="faq-arrow">▼</span></button><div class="faq-a">Respaldamos todo nuestro trabajo con una garantía integral. Tu satisfacción es nuestro compromiso, y estamos aquí para apoyarte después de la finalización del proyecto.</div></div>
+      <div class="faq-item"><button class="faq-q" onclick="toggleFaq(this)">¿Qué áreas atienden?<span class="faq-arrow">▼</span></button><div class="faq-a">Con orgullo servimos DFW, Austin y áreas circundantes en todo Texas con servicios de construcción expertos y apoyo completo de proyectos.</div></div>
+      <div class="faq-item"><button class="faq-q" onclick="toggleFaq(this)">¿Cuánto tiempo tarda un proyecto típico?<span class="faq-arrow">▼</span></button><div class="faq-a">Los plazos del proyecto varían según el alcance y la complejidad. Proporcionamos cronogramas detallados por adelantado para que siempre sepas cuándo esperar la finalización.</div></div>
+      <div class="faq-item"><button class="faq-q" onclick="toggleFaq(this)">¿Ofrecen opciones de financiamiento?<span class="faq-arrow">▼</span></button><div class="faq-a">Trabajamos con clientes en varias estructuras de pago. Contáctanos para discutir opciones que funcionen mejor para tu presupuesto y proyecto.</div></div>
+      <div class="faq-item"><button class="faq-q" onclick="toggleFaq(this)">¿Están licenciados y asegurados?<span class="faq-arrow">▼</span></button><div class="faq-a">Sí, estamos completamente licenciados y asegurados. Todo el trabajo está respaldado por cobertura integral que te protege de principio a fin.</div></div>
+      <div class="faq-item"><button class="faq-q" onclick="toggleFaq(this)">¿Pueden ayudar con reparaciones de emergencia?<span class="faq-arrow">▼</span></button><div class="faq-a">Absolutamente. Respondemos rápidamente a situaciones de emergencia y tenemos disponibilidad para reparaciones urgentes cuando nos necesites.</div></div>
+      <div class="faq-item"><button class="faq-q" onclick="toggleFaq(this)">¿Garantizan su trabajo?<span class="faq-arrow">▼</span></button><div class="faq-a">Respaldamos todo nuestro trabajo con una garantía integral. Tu satisfacción y tranquilidad están garantizadas.</div></div>
     </div>
   </div>
 </section>
@@ -395,9 +439,9 @@
       <div class="contact-info">
         <h3>Let's Build Something Amazing 🏗️</h3>
         <p>Whether it's a new construction, renovation, or maintenance project, we're ready to help you every step of the way.</p>
-        <div class="contact-detail"><div class="contact-icon">📞</div><div><strong>(555) 000-0000</strong><span>Mon–Sat, 8am–5pm</span></div></div>
-        <div class="contact-detail"><div class="contact-icon">✉️</div><div><strong>info@buildingevery dream.com</strong><span>Response within 24 hours</span></div></div>
-        <div class="contact-detail"><div class="contact-icon">📍</div><div><strong>Serving Your Area</strong><span>And surrounding regions</span></div></div>
+        <div class="contact-detail"><div class="contact-icon">📞</div><div><strong>817-233-5851</strong><span>Mon–Sat, 8am–5pm</span></div></div>
+        <div class="contact-detail"><div class="contact-icon">✉️</div><div><strong>info@buildingeverydream.com</strong><span>Response within 24 hours</span></div></div>
+        <div class="contact-detail"><div class="contact-icon">📍</div><div><strong>Serving DFW, Austin &amp; Surrounding Areas</strong><span>Texas-wide service</span></div></div>
         <div class="contact-detail"><div class="contact-icon">🌐</div><div><strong>Online &amp; In-Person</strong><span>Consultations available</span></div></div>
         <div class="contact-detail"><div class="contact-icon">⚡</div><div><strong>Fast Response</strong><span>Emergency services available</span></div></div>
       </div>
@@ -431,9 +475,9 @@
       <div class="contact-info">
         <h3>Construyamos Algo Increíble 🏗️</h3>
         <p>Ya sea construcción nueva, renovación o mantenimiento, estamos listos para ayudarte en cada paso del camino.</p>
-        <div class="contact-detail"><div class="contact-icon">📞</div><div><strong>(555) 000-0000</strong><span>Lun–Sáb, 8am–5pm</span></div></div>
+        <div class="contact-detail"><div class="contact-icon">📞</div><div><strong>817-233-5851</strong><span>Lun–Sáb, 8am–5pm</span></div></div>
         <div class="contact-detail"><div class="contact-icon">✉️</div><div><strong>info@buildingeverydream.com</strong><span>Respuesta en 24 horas</span></div></div>
-        <div class="contact-detail"><div class="contact-icon">📍</div><div><strong>Sirviendo Tu Área</strong><span>Y regiones circundantes</span></div></div>
+        <div class="contact-detail"><div class="contact-icon">📍</div><div><strong>Sirviendo DFW, Austin y Áreas Circundantes</strong><span>Servicio en todo Texas</span></div></div>
         <div class="contact-detail"><div class="contact-icon">🌐</div><div><strong>En Línea y Personal</strong><span>Consultas disponibles</span></div></div>
         <div class="contact-detail"><div class="contact-icon">⚡</div><div><strong>Respuesta Rápida</strong><span>Servicios de emergencia disponibles</span></div></div>
       </div>
@@ -461,7 +505,7 @@
 <footer class="lang-en">
   <span class="footer-frog">🏗️</span>
   <strong>Building Every Dream</strong> &nbsp;·&nbsp; Construction &amp; Services &nbsp;·&nbsp; Licensed &amp; Insured<br/>
-  (555) 000-0000 &nbsp;·&nbsp; info@buildingeverydream.com<br/>
+  817-233-5851 &nbsp;·&nbsp; info@buildingeverydream.com<br/>
   Consulting · Design · Construction · Renovation · Maintenance · Project Management
 </footer>
 
@@ -469,7 +513,7 @@
 <footer class="lang-es">
   <span class="footer-frog">🏗️</span>
   <strong>Construyendo Cada Sueño</strong> &nbsp;·&nbsp; Construcción y Servicios &nbsp;·&nbsp; Licenciados y Asegurados<br/>
-  (555) 000-0000 &nbsp;·&nbsp; info@buildingeverydream.com<br/>
+  817-233-5851 &nbsp;·&nbsp; info@buildingeverydream.com<br/>
   Consultoría · Diseño · Construcción · Renovación · Mantenimiento · Administración de Proyectos
 </footer>
 
